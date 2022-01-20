@@ -9,13 +9,36 @@ import { catchError, Observable, of } from 'rxjs';
 export class UserService {
   userBlock: any;
 
-  private apiUrl = environment.API_ENDPOINT + 'api';
+  private apiUrl = environment.API_ENDPOINT ;
 
   constructor(private http: HttpClient) { }
 
 
   signUp(data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/auth/signup`, data)
+    return this.http.post(`${this.apiUrl}api/auth/signup`, data)
+      .pipe(
+        catchError(this.handleError('Error', []))
+      );
+  }
+
+  
+  authLogin(data: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}sagson/public/api/auth/login`, data)
+      .pipe(
+        catchError(this.handleError('Error', []))
+      );
+  }
+
+  login(data: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}api/auth/user_login`, data)
+      .pipe(
+        catchError(this.handleError('Error', []))
+      );
+  }
+
+  
+  otpVerification(data: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}api/auth/otp_verification`, data)
       .pipe(
         catchError(this.handleError('Error', []))
       );

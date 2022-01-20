@@ -35,6 +35,13 @@ import { TransactionLogsComponent } from './login/transaction-logs/transaction-l
 import { NotificationsComponent } from './login/notifications/notifications.component';
 import { SettingsComponent } from './login/settings/settings.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { NgxMaskModule } from 'ngx-mask';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -70,7 +77,17 @@ import { HttpClientModule } from '@angular/common/http';
     BsDropdownModule.forRoot(),
     CarouselModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
     HttpClientModule,
+    MatInputModule,
+    ToastrModule.forRoot(),
+    NgxMaskModule.forRoot({
+      validation: true,
+    }),
     CollapseModule.forRoot(), TabsModule.forRoot(), AccordionModule.forRoot(), ModalModule.forRoot()
   ],
   providers: [],

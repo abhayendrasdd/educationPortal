@@ -1,52 +1,61 @@
 <nav class="navbar navbar-expand-lg navbar-light grayBg">
     <div class="container">
-        <a class="navbar-brand" href="javascript:void(0)" routerLink="/"><img src="../../../assets/images/logo.svg" alt=""></a>
-        <button class="navbar-toggler navbar-toggler-right nav-link" (click)="isCollapsed = !isCollapsed" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="javascript:void(0)" routerLink="/"><img src="../../../assets/images/logo.svg"
+                alt=""></a>
+        <button class="navbar-toggler navbar-toggler-right nav-link" (click)="isCollapsed = !isCollapsed"
+            aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
-    
+
         <div class="navbar-collapse collapse" container="body" [collapse]="isCollapsed" id="navbarNavDropdown">
-        <ul class="navbar-nav mr-auto">    
-            <li class="order-lg-2 headerSearch">
-                <form class="my-2 my-lg-0">
-                    <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search" routerLink="/search-results">
-                </form>
-            </li>     
-            <li class="nav-item order-lg-1 ml-0 btn-group" dropdown>
-                <a class="nav-link dropdown-toggle" href="#" type="button" id="button-animated" dropdownToggle aria-controls="dropdown-animated">
-                    Courses
-                </a>
-                <div class="dropdownMenu dropdown-menu">
-                    <ul>
-                        <li class="dropdown"><a class="dropdown-item" href="#">Business</a></li>
-                        <li class="dropdown"><a class="dropdown-item" href="#">Computer Science</a></li>
-                        <li class="dropdown"><a class="dropdown-item" href="#">Information Technology</a>
-                            <ul class="subMenu">
-                                <li class="dropdown"><a class="dropdown-item" href="#">IT Certifications</a>
-                                    <ul class="subMenu">
-                                        <li><a class="dropdown-item" href="#">IT Certifications</a></li>
-                                        <li><a class="dropdown-item" href="#">Network &amp; Security</a></li>
-                                        <li><a class="dropdown-item" href="#">Hardware</a></li>
-                                        <li><a class="dropdown-item" href="#">Operating System &amp; Servers</a></li>
-                                        <li><a class="dropdown-item" href="#">Other IT &amp; Software</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a class="dropdown-item" href="#">Network &amp; Security</a></li>
-                                <li class="dropdown"><a class="dropdown-item" href="#">Hardware</a></li>
-                                <li class="dropdown"><a class="dropdown-item" href="#">Operating System &amp; Servers</a></li>
-                                <li class="dropdown"><a class="dropdown-item" href="#">Other IT &amp; Software</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a class="dropdown-item" href="#">Language Learing</a></li>
-                        <li class="dropdown"><a class="dropdown-item" href="#">Health</a></li>
-                        <li class="dropdown"><a class="dropdown-item" href="#">Personal Development</a></li>
-                        <li class="dropdown"><a class="dropdown-item" href="#">Physical Science and Engineering</a></li>
-                        <li class="dropdown"><a class="dropdown-item" href="#">Social Science</a></li>
-                        <li class="dropdown"><a class="dropdown-item" href="#">Arts and Humanities</a></li>
-                        <li class="dropdown"><a class="dropdown-item" href="#">Math and Logic</a></li>
-                    </ul>
-                </div>
-                <!-- <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
+            <ul class="navbar-nav mr-auto">
+                <li class="order-lg-2 headerSearch">
+                    <form class="my-2 my-lg-0">
+                        <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search"
+                            routerLink="/search-results">
+                    </form>
+                </li>
+                <li class="nav-item order-lg-1 ml-0 btn-group" dropdown>
+                    <a class="nav-link dropdown-toggle" href="#" type="button" id="button-animated" dropdownToggle
+                        aria-controls="dropdown-animated">
+                        Courses
+                    </a>
+                    <div class="dropdownMenu dropdown-menu">
+                        <ul>
+                            <li class="dropdown"><a class="dropdown-item" href="#">Business</a></li>
+                            <li class="dropdown"><a class="dropdown-item" href="#">Computer Science</a></li>
+                            <li class="dropdown"><a class="dropdown-item" href="#">Information Technology</a>
+                                <ul class="subMenu">
+                                    <li class="dropdown"><a class="dropdown-item" href="#">IT Certifications</a>
+                                        <ul class="subMenu">
+                                            <li><a class="dropdown-item" href="#">IT Certifications</a></li>
+                                            <li><a class="dropdown-item" href="#">Network &amp; Security</a></li>
+                                            <li><a class="dropdown-item" href="#">Hardware</a></li>
+                                            <li><a class="dropdown-item" href="#">Operating System &amp; Servers</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Other IT &amp; Software</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a class="dropdown-item" href="#">Network &amp; Security</a>
+                                    </li>
+                                    <li class="dropdown"><a class="dropdown-item" href="#">Hardware</a></li>
+                                    <li class="dropdown"><a class="dropdown-item" href="#">Operating System &amp;
+                                            Servers</a></li>
+                                    <li class="dropdown"><a class="dropdown-item" href="#">Other IT &amp; Software</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a class="dropdown-item" href="#">Language Learing</a></li>
+                            <li class="dropdown"><a class="dropdown-item" href="#">Health</a></li>
+                            <li class="dropdown"><a class="dropdown-item" href="#">Personal Development</a></li>
+                            <li class="dropdown"><a class="dropdown-item" href="#">Physical Science and Engineering</a>
+                            </li>
+                            <li class="dropdown"><a class="dropdown-item" href="#">Social Science</a></li>
+                            <li class="dropdown"><a class="dropdown-item" href="#">Arts and Humanities</a></li>
+                            <li class="dropdown"><a class="dropdown-item" href="#">Math and Logic</a></li>
+                        </ul>
+                    </div>
+                    <!-- <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
         role="menu" aria-labelledby="button-animated">
                     <li role="menuitem"><a class="dropdown-item" href="#">Business</a></li>
                     <li role="menuitem"><a class="dropdown-item" href="#">Computer Science</a></li>
@@ -68,95 +77,122 @@
                     <li role="menuitem"><a class="dropdown-item" href="#">Arts and Humanities</a></li>
                     <li role="menuitem"><a class="dropdown-item" href="#">Math and Logic</a></li>
                 </ul> -->
-            </li>
-        </ul>
+                </li>
+            </ul>
 
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)" routerLink="/services" routerLinkActive="active">Services</a>            
-            </li>
-            <li class="nav-item ml-0 btn-group" dropdown>
-                
-                <a class="nav-link dropdown-toggle" href="javascript:void(0)" type="button" id="button-animated" dropdownToggle aria-controls="dropdown-animated">
-                    About Us
-                </a>
-                <div class="dropdownMenu dropdown-menu dropdown-menu-right">
-                    <ul>
-                        <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)" routerLink="/about-us">Our Story</a></li>
-                        <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)" routerLink="/about-us">Benefits</a></li>
-                        <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)" routerLink="/about-us">Team</a></li>
-                        <li role="menuitem"><a class="dropdown-item" href="#">Careers</a></li>                     
-                    </ul>
-                </div>
-                <!-- <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)" routerLink="/services"
+                        routerLinkActive="active">Services</a>
+                </li>
+                <li class="nav-item ml-0 btn-group" dropdown>
+
+                    <a class="nav-link dropdown-toggle" href="javascript:void(0)" type="button" id="button-animated"
+                        dropdownToggle aria-controls="dropdown-animated">
+                        About Us
+                    </a>
+                    <div class="dropdownMenu dropdown-menu dropdown-menu-right">
+                        <ul>
+                            <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)"
+                                    routerLink="/about-us">Our Story</a></li>
+                            <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)"
+                                    routerLink="/about-us">Benefits</a></li>
+                            <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)"
+                                    routerLink="/about-us">Team</a></li>
+                            <li role="menuitem"><a class="dropdown-item" href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <!-- <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
         role="menu" aria-labelledby="button-animated">
                     <li role="menuitem"><a class="dropdown-item" href="#">Business</a></li>
                     <li role="menuitem"><a class="dropdown-item" href="#">Computer Science</a></li>
                     <li role="menuitem"><a class="dropdown-item" href="#">Information Technology</a></li>
                 </ul> -->
-            </li>
-           
-            <ng-container  *ngIf="show; else elseBlock">
-                <li class="loginBtn">
-                    <a class="btn btn-primary" (click)="openModal(template)">Login</a>            
                 </li>
-                <li class="loginBtn signupBtn">
-                    <a class="btn btn-outlined" (click)="openModal3(signup)">Sign Up</a>            
-                </li>
-            </ng-container>
 
-            <ng-template #elseBlock>
-                <li class="userLogin btn-group" dropdown>
-                    <a href="javascript:void(0)" dropdownToggle type="button" class="dropdown-toggle"><img src="../../../assets/images/user1.jpg" alt=""></a>  
-                    <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
-                        <li class="ddHead">Menu</li>
-                        <li class="divider dropdown-divider"></li>
-                        <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)" routerLink="/my-account">My Account</a></li>
-                        <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)" routerLink="/enrolled-courses">Enrolled Courses</a></li>
-                        <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)" routerLink="/groups">Groups</a></li>
-                        <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)" routerLink="/transaction-logs">Transaction Logs</a>
-                        </li>
-                        <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)" routerLink="/notifications">Notification &amp; Alerts</a></li>
-                        <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)" routerLink="/settings">Settings</a></li>
-                        <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)" (click)="show = !show">Logout</a>
-                        </li>
-                      </ul>          
-                </li>               
-            </ng-template>
+                <ng-container *ngIf="show; else elseBlock">
+                    <li class="loginBtn">
+                        <a class="btn btn-primary" (click)="openModal(template)">Login</a>
+                    </li>
+                    <li class="loginBtn signupBtn">
+                        <a class="btn btn-outlined" (click)="openModal3(signup)">Sign Up</a>
+                    </li>
+                </ng-container>
 
-            
-        </ul>
-        
+                <ng-template #elseBlock>
+                    <li class="userLogin btn-group" dropdown>
+                        <a href="javascript:void(0)" dropdownToggle type="button" class="dropdown-toggle"><img
+                                src="../../../assets/images/user1.jpg" alt=""></a>
+                        <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li class="ddHead">Menu</li>
+                            <li class="divider dropdown-divider"></li>
+                            <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)"
+                                    routerLink="/my-account">My Account</a></li>
+                            <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)"
+                                    routerLink="/enrolled-courses">Enrolled Courses</a></li>
+                            <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)"
+                                    routerLink="/groups">Groups</a></li>
+                            <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)"
+                                    routerLink="/transaction-logs">Transaction Logs</a>
+                            </li>
+                            <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)"
+                                    routerLink="/notifications">Notification &amp; Alerts</a></li>
+                            <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)"
+                                    routerLink="/settings">Settings</a></li>
+                            <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)"
+                                    (click)="show = !show">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ng-template>
+
+
+            </ul>
+
         </div>
     </div>
-    
+
 </nav>
 
 <ng-template #template>
     <div class="modal-header">
-      <h4 class="modal-title">Login into your account</h4>
-      <a href="javascript:void(0)" class="primary-color underlineLink f-12" (click)="openModal3(signup); closeFirstModal()">Sign Up</a>
-      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-        <span aria-hidden="true" class="visually-hidden">&times;</span>
-      </button>
+        <h4 class="modal-title">Login into your account</h4>
+        <a href="javascript:void(0)" class="primary-color underlineLink f-12"
+            (click)="openModal3(signup); closeFirstModal()">Sign Up</a>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
     </div>
     <div class="modal-body">
-        <form class="formWidget">
+        <form class="formWidget" [formGroup]="loginForm" (submit)="onLoginSubmit()">
             <div class="form-group">
                 <label for="" class="label">Email</label>
                 <div class="formFields">
                     <span class="field-icon"><img src="../../../assets/images/icon-email.svg" alt=""></span>
-                    <input type="text" placeholder="johndoe@gmail.com" class="form-control">
+                    <input type="text" placeholder="johndoe@gmail.com" class="form-control" formControlName="email">
+                    <span class="text-danger" *ngIf="loginForm.controls['email'].hasError('required') && isLoginSubmitted">
+                        Email is required <i class="fa fa-exclamation"></i>
+                    </span>
+                    <span class="text-danger" *ngIf="loginForm.controls['email'].hasError('email') && isLoginSubmitted">
+                        Email is Invalid <i class="fa fa-exclamation"></i>
+                    </span>
                 </div>
             </div>
             <div class="form-group">
                 <label for="" class="label">Password</label>
                 <div class="formFields">
                     <span class="field-icon"><img src="../../../assets/images/icon-password.svg" alt=""></span>
-                    <input type="password" placeholder="Password" class="form-control">
+                    <input type="password" placeholder="Password" class="form-control" formControlName="password">
+                    <span class="text-danger" *ngIf="loginForm.controls['password'].hasError('required') && isLoginSubmitted">
+                        Password is required <i class="fa fa-exclamation"></i>
+                    </span>
+                    <span class="text-danger" *ngIf="loginForm.controls['password'].hasError('minlength') && isLoginSubmitted">
+                        Password should be atleast 8 characters long <i class="fa fa-exclamation"></i>
+                    </span>
                 </div>
             </div>
-            <p class="forgot-password"><a href="javascript:void(0)" (click)="openModal4(forgotpassword); closeFirstModal()">Forgot Password?</a></p>
+            <p class="forgot-password"><a href="javascript:void(0)"
+                    (click)="openModal4(forgotpassword); closeFirstModal()">Forgot Password?</a></p>
             <div class="captcha"><img src="../../../assets/images/recaptcha.png" alt=""></div>
             <div class="otherLogin">
                 <p>Or Login with</p>
@@ -166,56 +202,59 @@
                     <li><a href="javascript:void(0)"><i class="fab fa-apple"></i> <span>Apple</span></a></li>
                 </ul>
             </div>
-            <div class="formButton mt-3 text-center"><button type="button" class="btn btn-primary btn-md" (click)="openModal2(otp); closeFirstModal()">Login</button></div>
+            <div class="formButton mt-3 text-center"><button type="button" class="btn btn-primary btn-md"
+                    (click)="openModal2(otp); loginForm.valid ? closeFirstModal() : '' ">Login</button></div>
         </form>
     </div>
-  </ng-template>
+</ng-template>
 
 <ng-template #otp>
     <div class="modal-header">
-      <h4 class="modal-title">OTP</h4>      
-      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef2?.hide()">
-        <span aria-hidden="true" class="visually-hidden">&times;</span>
-      </button>
+        <h4 class="modal-title">OTP</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef2?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
     </div>
     <div class="modal-body">
-        <form class="formWidget"> 
+        <form class="formWidget"  [formGroup]="otpForm" (submit)="onOtpSubmit()">
             <div class="form-group">
                 <div class="d-flex justify-content-between">
                     <label class="label">Enter OTP</label>
-                    <a href="javascript:void(0)" class="primary-color underlineLink" (click)="openModal5(sendotp); closeOTPModal()">Resend</a>
+                    <a href="javascript:void(0)" class="primary-color underlineLink"
+                        (click)="openModal5(sendotp); closeOTPModal()">Resend</a>
                 </div>
                 <div class="row row10">
                     <div class="col">
-                        <input type="text" class="form-control text-center" placeholder="0">
+                        <input type="text"  formControlName="firstDigit"  class="form-control text-center" placeholder="0">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control text-center" placeholder="0">
+                        <input type="text" formControlName="secDigit"  class="form-control text-center" placeholder="0">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control text-center" placeholder="0">
+                        <input type="text" formControlName="thirdDigit"  class="form-control text-center" placeholder="0">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control text-center" placeholder="0">
+                        <input type="text" formControlName="fourthDigit"   class="form-control text-center" placeholder="0">
                     </div>
                 </div>
             </div>
-            <div class="form-group text-center">Please enter the OTP you have recieved on your Mobile No.</div>           
-            <div class="formButton mt-3 text-center"><button class="btn btn-primary btn-md" (click)="show = !show">Continue</button></div>
+            <div class="form-group text-center">Please enter the OTP you have recieved on your Mobile No.</div>
+            <div class="formButton mt-3 text-center"><button class="btn btn-primary btn-md"
+                    (click)="show = !show; otpForm.valid ? closeOTPModal() : '' ">Continue</button></div>
         </form>
     </div>
-  </ng-template>
+</ng-template>
 
-  <ng-template #sendotp>
+<ng-template #sendotp>
     <div class="modal-header">
-      <h4 class="modal-title">Send OTP</h4>      
-      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef5?.hide()">
-        <span aria-hidden="true" class="visually-hidden">&times;</span>
-      </button>
+        <h4 class="modal-title">Send OTP</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef5?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
     </div>
     <div class="modal-body">
-        <div class="modalSubtext text-center">Want to recieve OTP on Email or on the Phone No?</div>  
-        <form class="formWidget"> 
+        <div class="modalSubtext text-center">Want to recieve OTP on Email or on the Phone No?</div>
+        <form class="formWidget">
             <div class="form-group">
                 <label for="" class="label">Email</label>
                 <div class="formFields">
@@ -230,29 +269,34 @@
                     <span class="field-icon"><img src="../../../assets/images/icon-phone.svg" alt=""></span>
                     <input type="text" placeholder="9898989898" class="form-control">
                 </div>
-            </div>       
-            <div class="formButton mt-3 text-center"><button type="button" class="btn btn-primary btn-md" (click)="openModal2(otp); closeSendOTPModal()">Send OTP</button></div>
+            </div>
+            <div class="formButton mt-3 text-center"><button type="button" class="btn btn-primary btn-md"
+                    (click)="openModal2(otp); closeSendOTPModal()">Send OTP</button></div>
         </form>
     </div>
-  </ng-template>
+</ng-template>
 
 <ng-template #signup>
     <div class="modal-header">
-        <h4 class="modal-title">Sign Up</h4>    
-        <a href="javascript:void(0)" class="primary-color underlineLink f-12" (click)="openModal(template); closeSignupModal()">Login</a>  
+        <h4 class="modal-title">Sign Up</h4>
+        <a href="javascript:void(0)" class="primary-color underlineLink f-12"
+            (click)="openModal(template); closeSignupModal()">Login</a>
         <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef3?.hide()">
-        <span aria-hidden="true" class="visually-hidden">&times;</span>
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
         </button>
     </div>
     <div class="modal-body">
-        <form class="formWidget">
+        <form class="formWidget" [formGroup]="signUpForm" (submit)="onSignUpSubmit()">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="" class="label">Full Name</label>
                         <div class="formFields">
                             <span class="field-icon"><img src="../../../assets/images/icon-name.svg" alt=""></span>
-                            <input type="text" placeholder="John Doe" class="form-control">
+                            <input type="text" placeholder="John Doe" class="form-control" formControlName="username">
+                            <span class="text-danger" *ngIf="signUpForm.controls['username'].hasError('required') && isSubmited">
+                                Full name is required <i class="fa fa-exclamation"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -261,7 +305,14 @@
                         <label for="" class="label">Email</label>
                         <div class="formFields">
                             <span class="field-icon"><img src="../../../assets/images/icon-email.svg" alt=""></span>
-                            <input type="text" placeholder="johndoe@gmail.com" class="form-control">
+                            <input type="text" placeholder="johndoe@gmail.com" class="form-control"
+                                formControlName="email">
+                                <span class="text-danger" *ngIf="signUpForm.controls['email'].hasError('required') && isSubmited">
+                                    Email is required <i class="fa fa-exclamation"></i>
+                                </span>
+                                <span class="text-danger" *ngIf="signUpForm.controls['email'].hasError('email') && isSubmited">
+                                    Email is required <i class="fa fa-exclamation"></i>
+                                </span>
                         </div>
                     </div>
                 </div>
@@ -270,7 +321,11 @@
                         <label for="" class="label">Password</label>
                         <div class="formFields">
                             <span class="field-icon"><img src="../../../assets/images/icon-password.svg" alt=""></span>
-                            <input type="password" placeholder="Password" class="form-control">
+                            <input type="password" placeholder="Password" class="form-control"
+                                formControlName="password">
+                                <span class="text-danger" *ngIf="signUpForm.controls['password'].hasError('required') && isSubmited">
+                                    Password is required <i class="fa fa-exclamation"></i>
+                                </span>
                             <ul class="passwordType">
                                 <li><span></span></li>
                                 <li><span></span></li>
@@ -285,7 +340,11 @@
                         <label for="" class="label">Phone No.</label>
                         <div class="formFields">
                             <span class="field-icon"><img src="../../../assets/images/icon-phone.svg" alt=""></span>
-                            <input type="text" placeholder="johndoe@gmail.com" class="form-control">
+                            <input type="number" placeholder="Phone Number" class="form-control"
+                                formControlName="phone">
+                                <span class="text-danger" *ngIf="signUpForm.controls['phone'].hasError('required') && isSubmited">
+                                    Phone is required <i class="fa fa-exclamation"></i>
+                                </span>
                         </div>
                     </div>
                 </div>
@@ -294,7 +353,17 @@
                         <label for="" class="label">Country</label>
                         <div class="formFields">
                             <span class="field-icon"><img src="../../../assets/images/icon-country.svg" alt=""></span>
-                            <input type="text" placeholder="Select Country" class="form-control">
+                            <select class="form-control" formControlName="country" >
+                                <option value="" disabled selected>Select Country</option>
+                                <option *ngFor="let country of countryOptions" [value]="country.code">
+                                    {{country.name}}
+                                </option>
+                            </select>
+                            <!-- <input type="text" placeholder="Select Country" class="form-control"
+                                formControlName="country"> -->
+                                <span class="text-danger" *ngIf="signUpForm.controls['country'].hasError('required') && isSubmited">
+                                    Country is required <i class="fa fa-exclamation"></i>
+                                </span>
                         </div>
                     </div>
                 </div>
@@ -302,8 +371,19 @@
                     <div class="form-group">
                         <label for="" class="label">Gender</label>
                         <div class="formFields">
+                            
                             <span class="field-icon"><img src="../../../assets/images/icon-gender.svg" alt=""></span>
-                            <input type="text" placeholder="Select Gender" class="form-control">
+                            <select class="form-control" formControlName="gender" >
+                                <option value="" disabled selected>Select Gender</option>
+                                <option *ngFor="let gender of GenderOptions" [value]="gender.value">
+                                    {{gender.name}}
+                                </option>
+                            </select>
+                            <!-- <input type="text" placeholder="Select Gender" class="form-control"
+                                formControlName="gender"> -->
+                                <span class="text-danger" *ngIf="signUpForm.controls['gender'].hasError('required') && isSubmited">
+                                    Gender is required <i class="fa fa-exclamation"></i>
+                                </span>
                         </div>
                     </div>
                 </div>
@@ -311,8 +391,19 @@
                     <div class="form-group">
                         <label for="" class="label">Date of Birth</label>
                         <div class="formFields">
-                            <span class="field-icon"><img src="../../../assets/images/icon-date.svg" alt=""></span>
-                            <input type="text" placeholder="Select Date" class="form-control">
+                            <!-- <span class="field-icon"><img src="../../../assets/images/icon-date.svg" alt=""></span> -->
+                            <!-- <input type="text" placeholder="yyyy-dd-mm" class="form-control" formControlName="dob"> -->
+                            <mat-form-field appearance="outline">
+                                <input [dropSpecialCharacters]="false" matInput placeholder="YYYY-MM-DD" mask="0000-00-00"
+                                     [leadZeroDateTime]="true" formControlName="dob">
+                                <input (dateInput)="OnDateChange($event.value)" hidden="true" matInput
+                                    [matDatepicker]="picker" placeholder="Choose your date of birth">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker startView="year"></mat-datepicker>
+                            </mat-form-field><br>
+                            <span class="text-danger" *ngIf="signUpForm.controls['dob'].hasError('required') && isSubmited">
+                                DOB is required <i class="fa fa-exclamation"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -321,21 +412,27 @@
                         <label for="" class="label">Education</label>
                         <div class="formFields">
                             <span class="field-icon"><img src="../../../assets/images/icon-education.svg" alt=""></span>
-                            <input type="text" placeholder="Enter your highest education" class="form-control">
+                            <input type="text" placeholder="Enter your highest education" class="form-control"
+                                formControlName="education">
+                                <span class="text-danger" *ngIf="signUpForm.controls['education'].hasError('required') && isSubmited">
+                                    Education is required <i class="fa fa-exclamation"></i>
+                                </span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="custom-control custom-checkbox mb-2">
                 <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                <label class="custom-control-label" for="customControlAutosizing">I'm in for emails with exciting discounts and personalized recommendations</label>
+                <label class="custom-control-label" for="customControlAutosizing">I'm in for emails with exciting
+                    discounts and personalized recommendations</label>
             </div>
-            <div class="captcha"><img src="../../../assets/images/recaptcha.png" alt=""></div>
+            <!-- <div class="captcha"><img src="../../../assets/images/recaptcha.png" alt=""></div> -->
             <div class="otherLogin">
                 <p>Or Login with</p>
                 <ul class="loginWith">
                     <li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a></li>
-                    <li><a href="javascript:void(0)" (click)="openModal6(logingoogle); closeSignupModal()"><i class="fab fa-google"></i> <span>Google</span></a></li>
+                    <li><a href="javascript:void(0)" (click)="openModal6(logingoogle); closeSignupModal()"><i
+                                class="fab fa-google"></i> <span>Google</span></a></li>
                     <li><a href="javascript:void(0)"><i class="fab fa-apple"></i> <span>Apple</span></a></li>
                 </ul>
             </div>
@@ -346,13 +443,13 @@
 
 <ng-template #forgotpassword>
     <div class="modal-header">
-        <h4 class="modal-title">Forgot Password</h4>  
+        <h4 class="modal-title">Forgot Password</h4>
         <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef4?.hide()">
-        <span aria-hidden="true" class="visually-hidden">&times;</span>
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
         </button>
     </div>
-    <div class="modal-body">        
-        <form class="formWidget"> 
+    <div class="modal-body">
+        <form class="formWidget">
             <div class="form-group">
                 <label for="" class="label">Email</label>
                 <div class="formFields">
@@ -360,7 +457,8 @@
                     <input type="text" placeholder="johndoe@gmail.com" class="form-control">
                 </div>
             </div>
-            <p class="forgotPassInfo">Please enter your registered email address to get the link to reset your new password.</p>           
+            <p class="forgotPassInfo">Please enter your registered email address to get the link to reset your new
+                password.</p>
             <div class="formButton mt-3 text-center"><button class="btn btn-primary btn-md">Login</button></div>
         </form>
     </div>
@@ -368,46 +466,46 @@
 
 <ng-template #logingoogle>
     <div class="modal-header">
-        <h4 class="modal-title">Continue Google Login</h4>  
+        <h4 class="modal-title">Continue Google Login</h4>
         <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef6?.hide()">
-        <span aria-hidden="true" class="visually-hidden">&times;</span>
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
         </button>
     </div>
-    <div class="modal-body">        
-        <form class="formWidget">  
-            
-                <div class="form-group">
-                    <label for="" class="label">Country</label>
-                    <div class="formFields">
-                        <span class="field-icon"><img src="../../../assets/images/icon-country.svg" alt=""></span>
-                        <input type="text" placeholder="Select Country" class="form-control">
-                    </div>
+    <div class="modal-body">
+        <form class="formWidget">
+
+            <div class="form-group">
+                <label for="" class="label">Country</label>
+                <div class="formFields">
+                    <span class="field-icon"><img src="../../../assets/images/icon-country.svg" alt=""></span>
+                    <input type="text" placeholder="Select Country" class="form-control">
                 </div>
-            
-                <div class="form-group">
-                    <label for="" class="label">Gender</label>
-                    <div class="formFields">
-                        <span class="field-icon"><img src="../../../assets/images/icon-gender.svg" alt=""></span>
-                        <input type="text" placeholder="Select Gender" class="form-control">
-                    </div>
+            </div>
+
+            <div class="form-group">
+                <label for="" class="label">Gender</label>
+                <div class="formFields">
+                    <span class="field-icon"><img src="../../../assets/images/icon-gender.svg" alt=""></span>
+                    <input type="text" placeholder="Select Gender" class="form-control">
                 </div>
-            
-                <div class="form-group">
-                    <label for="" class="label">Date of Birth</label>
-                    <div class="formFields">
-                        <span class="field-icon"><img src="../../../assets/images/icon-date.svg" alt=""></span>
-                        <input type="text" placeholder="Select Date" class="form-control">
-                    </div>
+            </div>
+
+            <div class="form-group">
+                <label for="" class="label">Date of Birth</label>
+                <div class="formFields">
+                    <span class="field-icon"><img src="../../../assets/images/icon-date.svg" alt=""></span>
+                    <input type="text" placeholder="Select Date" class="form-control">
                 </div>
-           
-                <div class="form-group">
-                    <label for="" class="label">Education</label>
-                    <div class="formFields">
-                        <span class="field-icon"><img src="../../../assets/images/icon-education.svg" alt=""></span>
-                        <input type="text" placeholder="Enter your highest education" class="form-control">
-                    </div>
+            </div>
+
+            <div class="form-group">
+                <label for="" class="label">Education</label>
+                <div class="formFields">
+                    <span class="field-icon"><img src="../../../assets/images/icon-education.svg" alt=""></span>
+                    <input type="text" placeholder="Enter your highest education" class="form-control">
                 </div>
-                   
+            </div>
+
             <div class="formButton mt-3 text-center"><button class="btn btn-primary btn-md">Continue</button></div>
         </form>
     </div>

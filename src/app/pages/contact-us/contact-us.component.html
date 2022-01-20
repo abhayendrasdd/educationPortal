@@ -1,32 +1,57 @@
 <section class="section contactUsSection">
-    <div class="container">
-        <div class="title text-center">
-            <h2>We'd Love to Hear from You</h2>            
-        </div>
-        <h3 class="heading text-center mw-500">Please submit your information and we will get in touch with you</h3>
-        <p class="text-center secondary-color">Call sales at +1 555 505 5050</p>
-        <div class="row">
-            <div class="col-md-8 col-lg-9">
-               <div class="row">
+    <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()">
+        <div class="container">
+            <div class="title text-center">
+                <h2>We'd Love to Hear from You</h2>
+            </div>
+            <h3 class="heading text-center mw-500">Please submit your information and we will get in touch with you</h3>
+            <p class="text-center secondary-color">Call sales at +1 555 505 5050</p>
+            <div class="row">
+                <div class="col-md-8 col-lg-9">
+                    <div class="row">
                         <div class="col-md-6 form-group30">
-                            <input type="text" class="form-control" placeholder="Your name">
+                            <input type="text" class="form-control" placeholder="Your name" formControlName="full_name">
+                            <span class="text-danger"
+                                *ngIf="contactUsForm.controls['full_name'].hasError('required') && isSubmited">
+                                Name is required <i class="fa fa-exclamation"></i></span>
                         </div>
                         <div class="col-md-6 form-group30">
-                            <input type="text" class="form-control" placeholder="Your email">
+                            <input type="text" class="form-control" placeholder="Your email" formControlName="email">
+                            <span class="text-danger"
+                                *ngIf="contactUsForm.controls['email'].hasError('required') && isSubmited">
+                                Email is required <i class="fa fa-exclamation"></i>
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="contactUsForm.controls['email'].hasError('email') && isSubmited">
+                                Email is Invalid <i class="fa fa-exclamation"></i>
+                            </span>
                         </div>
                         <div class="col-md-6 form-group30">
-                            <input type="text" class="form-control" placeholder="Your phone">
+                            <input type="text" class="form-control" placeholder="Your phone" formControlName="phone">
+                            <span class="text-danger"
+                            *ngIf="contactUsForm.controls['phone'].hasError('required') && isSubmited">
+                            Phone is required <i class="fa fa-exclamation"></i>
+                        </span>
                         </div>
                         <div class="col-md-12 form-group30">
-                            <textarea class="form-control h-170" placeholder="Your message"></textarea>
+                            <textarea class="form-control h-170" placeholder="Your message"
+                                formControlName="message"></textarea>
+                                <span class="text-danger"
+                                *ngIf="contactUsForm.controls['message'].hasError('required') && isSubmited">
+                                Message is required <i class="fa fa-exclamation"></i>
+                            </span>
                         </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <h4 class="heading mb-2">Help</h4>
+                    <p class="secondary-color">Need help? Don't hestiate to ask us somethnig. Email us directly
+                        info@sagson.com or call us at <span class="text-nowrap">1-347-523-34-90.</span> You can checkout
+                        our F.A.Q. and Help page to get more information about our products.</p>
                 </div>
             </div>
-            <div class="col-md-4 col-lg-3">
-                <h4 class="heading mb-2">Help</h4>
-                <p class="secondary-color">Need help? Don't hestiate to ask us somethnig. Email us directly info@sagson.com or call us at <span class="text-nowrap">1-347-523-34-90.</span> You can checkout our F.A.Q. and Help page to get more information about our products.</p>
-            </div>
+            <p class="text-center"><button type="button" class="btn btn-primary btn-lg" (click)="onSubmit()">Contact
+                    Us</button></p>
         </div>
-        <p class="text-center"><button type="button" class="btn btn-primary btn-lg">Contact Us</button></p>
-    </div>
+    </form>
 </section>

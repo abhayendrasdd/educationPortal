@@ -4,8 +4,17 @@
 
 export const environment = {
   production: false,
+  API_ENDPOINT: 'http://35.80.198.152:7136/',
+  WEB_ENDPOINT: 'http://localhost:4200/'
 
 };
+
+// Local 
+// export const environment = {
+//   production: false,
+//   API_ENDPOINT: 'http://localhost:4001/',
+//   WEB_ENDPOINT: 'http://localhost:4200/'
+// };
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -32,40 +32,44 @@ export class HeaderComponent implements OnInit {
   otpForm!: FormGroup;
 
   countryOptions: any = [
-    {name: 'Australia', code: 'AU'}, 
-    {name: 'United States', code: 'US'},  
-    {name: 'India', code: 'IN'}, 
-    {name: 'United Kingdom', code: 'GB'},
-    {name: 'Spain', code: 'ES'}, 
-    {name: 'Mexico', code: 'MX'}
+    { name: 'Australia', code: 'AU' },
+    { name: 'United States', code: 'US' },
+    { name: 'India', code: 'IN' },
+    { name: 'United Kingdom', code: 'GB' },
+    { name: 'Spain', code: 'ES' },
+    { name: 'Mexico', code: 'MX' }
   ]
 
   GenderOptions: any = [
-    {name: 'Male', value: 'male'}, 
-    {name: 'Female', value: 'female'},  
+    { name: 'Male', value: 'male' },
+    { name: 'Female', value: 'female' },
   ]
+
+
+  public account = {
+    password: <string><unknown>null
+  };
+  public barLabel: string = "Password strength:";
+  public myColors = ['#DD2C00', '#FF6D00', '#FFD600', '#AEEA00', '#00C853'];
+  public thresholds = [90, 75, 45, 25];
 
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private toastrService : ToastrService,
+    private toastrService: ToastrService,
     private modalService: BsModalService
   ) {
 
     this.signUpForm = this.fb.group({
       username: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      // password: ['', [Validators.required, Validators.minLength(8)]],
+      password: [null, [Validators.required, Validators.minLength(8), Validators.maxLength(30), Validators.pattern('(?=\\D*\\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{8,30}')]],
       phone: ['', [Validators.required]],
       gender: ['', [Validators.required]],
       dob: ['', [Validators.required]],
       education: ['', [Validators.required]],
       country: ['', [Validators.required]]
-    });
-
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
     });
 
     this.loginForm = this.fb.group({
@@ -80,7 +84,6 @@ export class HeaderComponent implements OnInit {
       fourthDigit: ['', [Validators.required]]
     });
 
-    
 
   }
 
@@ -88,22 +91,22 @@ export class HeaderComponent implements OnInit {
 
   }
 
-   OnDateChange(event: any) {
+  OnDateChange(event: any) {
     this.signUpForm.get('dob')?.setValue(moment(event).format('YYYY-MM-DD'));
   }
 
-  onOtpSubmit(){
+  onOtpSubmit() {
     console.log("onOtpSubmit Values ", this.otpForm.value)
     if (this.otpForm.invalid) {
       return
     }
-    
+
     this.closeOTPModal();
 
   }
 
   onSignUpSubmit() {
-    
+
     if (this.signUpForm.invalid) {
       this.isSubmited = true;
       return
@@ -125,15 +128,17 @@ export class HeaderComponent implements OnInit {
     this.signUpForm.value.institution = "xyz";
     this.signUpForm.value.department = "It";
     this.signUpForm.value.address = "jvfjjfdjfjdkjkfjk";
-    this.signUpForm.value.push_notification = "active" ;
-    this.signUpForm.value.alert = "active" ;
-    this.signUpForm.value.message = "active" ;
+    this.signUpForm.value.push_notification = "active";
+    this.signUpForm.value.alert = "active";
+    this.signUpForm.value.message = "active";
 
-    this.userService.signUp(this.signUpForm.value).subscribe((res:any)=>{
-      if(res.status == 200){
-        this.toastrService.success("Success",res.data)
+    this.userService.signUp(this.signUpForm.value).subscribe((res: any) => {
+      if (res.status == 200) {
+        this.toastrService.success("Success", res.data)
+        this.closeSignupModal();
+        this.loginForm.reset();
       } else {
-        this.toastrService.error("Error",res.data)
+        this.toastrService.error("Error", res.data)
       }
     })
 
@@ -175,8 +180,8 @@ export class HeaderComponent implements OnInit {
       return
     }
     // Login api
-    this.userService.login(this.loginForm.value).subscribe((res:any)=>{
-      console.log("login resp ",res);
+    this.userService.login(this.loginForm.value).subscribe((res: any) => {
+      console.log("login resp ", res);
     })
 
     this.modalRef2 = this.modalService.show(template, { id: 2, class: 'modal-dialog-centered' });

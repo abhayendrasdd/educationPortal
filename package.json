@@ -22,6 +22,7 @@
     "@angular/router": "~13.1.0",
     "bootstrap": "^4.1.1",
     "moment": "^2.29.1",
+    "ng9-password-strength-bar": "^1.1.0",
     "ngx-bootstrap": "^7.1.0",
     "ngx-mask": "^13.1.1",
     "ngx-owl-carousel-o": "^7.0.1",

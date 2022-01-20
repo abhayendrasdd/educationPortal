@@ -170,7 +170,8 @@
                 <div class="formFields">
                     <span class="field-icon"><img src="../../../assets/images/icon-email.svg" alt=""></span>
                     <input type="text" placeholder="johndoe@gmail.com" class="form-control" formControlName="email">
-                    <span class="text-danger" *ngIf="loginForm.controls['email'].hasError('required') && isLoginSubmitted">
+                    <span class="text-danger"
+                        *ngIf="loginForm.controls['email'].hasError('required') && isLoginSubmitted">
                         Email is required <i class="fa fa-exclamation"></i>
                     </span>
                     <span class="text-danger" *ngIf="loginForm.controls['email'].hasError('email') && isLoginSubmitted">
@@ -183,10 +184,13 @@
                 <div class="formFields">
                     <span class="field-icon"><img src="../../../assets/images/icon-password.svg" alt=""></span>
                     <input type="password" placeholder="Password" class="form-control" formControlName="password">
-                    <span class="text-danger" *ngIf="loginForm.controls['password'].hasError('required') && isLoginSubmitted">
+
+                    <span class="text-danger"
+                        *ngIf="loginForm.controls['password'].hasError('required') && isLoginSubmitted">
                         Password is required <i class="fa fa-exclamation"></i>
                     </span>
-                    <span class="text-danger" *ngIf="loginForm.controls['password'].hasError('minlength') && isLoginSubmitted">
+                    <span class="text-danger"
+                        *ngIf="loginForm.controls['password'].hasError('minlength') && isLoginSubmitted">
                         Password should be atleast 8 characters long <i class="fa fa-exclamation"></i>
                     </span>
                 </div>
@@ -216,7 +220,7 @@
         </button>
     </div>
     <div class="modal-body">
-        <form class="formWidget"  [formGroup]="otpForm" (submit)="onOtpSubmit()">
+        <form class="formWidget" [formGroup]="otpForm" (submit)="onOtpSubmit()">
             <div class="form-group">
                 <div class="d-flex justify-content-between">
                     <label class="label">Enter OTP</label>
@@ -225,16 +229,19 @@
                 </div>
                 <div class="row row10">
                     <div class="col">
-                        <input type="text"  formControlName="firstDigit"  class="form-control text-center" placeholder="0">
+                        <input type="text" formControlName="firstDigit" class="form-control text-center"
+                            placeholder="0">
                     </div>
                     <div class="col">
-                        <input type="text" formControlName="secDigit"  class="form-control text-center" placeholder="0">
+                        <input type="text" formControlName="secDigit" class="form-control text-center" placeholder="0">
                     </div>
                     <div class="col">
-                        <input type="text" formControlName="thirdDigit"  class="form-control text-center" placeholder="0">
+                        <input type="text" formControlName="thirdDigit" class="form-control text-center"
+                            placeholder="0">
                     </div>
                     <div class="col">
-                        <input type="text" formControlName="fourthDigit"   class="form-control text-center" placeholder="0">
+                        <input type="text" formControlName="fourthDigit" class="form-control text-center"
+                            placeholder="0">
                     </div>
                 </div>
             </div>
@@ -294,7 +301,8 @@
                         <div class="formFields">
                             <span class="field-icon"><img src="../../../assets/images/icon-name.svg" alt=""></span>
                             <input type="text" placeholder="John Doe" class="form-control" formControlName="username">
-                            <span class="text-danger" *ngIf="signUpForm.controls['username'].hasError('required') && isSubmited">
+                            <span class="text-danger"
+                                *ngIf="signUpForm.controls['username'].hasError('required') && isSubmited">
                                 Full name is required <i class="fa fa-exclamation"></i>
                             </span>
                         </div>
@@ -307,12 +315,14 @@
                             <span class="field-icon"><img src="../../../assets/images/icon-email.svg" alt=""></span>
                             <input type="text" placeholder="johndoe@gmail.com" class="form-control"
                                 formControlName="email">
-                                <span class="text-danger" *ngIf="signUpForm.controls['email'].hasError('required') && isSubmited">
-                                    Email is required <i class="fa fa-exclamation"></i>
-                                </span>
-                                <span class="text-danger" *ngIf="signUpForm.controls['email'].hasError('email') && isSubmited">
-                                    Email is required <i class="fa fa-exclamation"></i>
-                                </span>
+                            <span class="text-danger"
+                                *ngIf="signUpForm.controls['email'].hasError('required') && isSubmited">
+                                Email is required <i class="fa fa-exclamation"></i>
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="signUpForm.controls['email'].hasError('email') && isSubmited">
+                                Email is required <i class="fa fa-exclamation"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -321,17 +331,33 @@
                         <label for="" class="label">Password</label>
                         <div class="formFields">
                             <span class="field-icon"><img src="../../../assets/images/icon-password.svg" alt=""></span>
-                            <input type="password" placeholder="Password" class="form-control"
-                                formControlName="password">
-                                <span class="text-danger" *ngIf="signUpForm.controls['password'].hasError('required') && isSubmited">
-                                    Password is required <i class="fa fa-exclamation"></i>
-                                </span>
-                            <ul class="passwordType">
+                            <!-- <input type="password" placeholder="Password" class="form-control"
+                                formControlName="password"> -->
+                            <!-- password Strenght password -->
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Enter password" formControlName="password" [(ngModel)]="account.password"
+                                #password required>
+                            <ng9-password-strength-bar [passwordToCheck]="account.password" [barLabel]="barLabel"
+                                [customThresholds]="thresholds" [barColors]="myColors">
+                            </ng9-password-strength-bar>
+                            <span class="text-danger"
+                                *ngIf="signUpForm.controls['password'].hasError('required') && isSubmited">
+                                Password is required <i class="fa fa-exclamation"></i>
+                            </span>
+                            <span class="text-danger"
+                            *ngIf="signUpForm.controls['password'].hasError('minlength') && isSubmited">
+                            Passwords must be a minimum of 8 characters<i class="fa fa-exclamation"></i>
+                        </span> <br>
+                            <span class="text-danger"
+                            *ngIf="signUpForm.controls['password'].hasError('pattern') && isSubmited">
+                            Password strength is weak <i class="fa fa-exclamation"></i>
+                        </span>
+                            <!-- <ul class="passwordType">
                                 <li><span></span></li>
                                 <li><span></span></li>
                                 <li><span></span></li>
                                 <li><span></span></li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                 </div>
@@ -342,9 +368,10 @@
                             <span class="field-icon"><img src="../../../assets/images/icon-phone.svg" alt=""></span>
                             <input type="number" placeholder="Phone Number" class="form-control"
                                 formControlName="phone">
-                                <span class="text-danger" *ngIf="signUpForm.controls['phone'].hasError('required') && isSubmited">
-                                    Phone is required <i class="fa fa-exclamation"></i>
-                                </span>
+                            <span class="text-danger"
+                                *ngIf="signUpForm.controls['phone'].hasError('required') && isSubmited">
+                                Phone is required <i class="fa fa-exclamation"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -353,7 +380,7 @@
                         <label for="" class="label">Country</label>
                         <div class="formFields">
                             <span class="field-icon"><img src="../../../assets/images/icon-country.svg" alt=""></span>
-                            <select class="form-control" formControlName="country" >
+                            <select class="form-control" formControlName="country">
                                 <option value="" disabled selected>Select Country</option>
                                 <option *ngFor="let country of countryOptions" [value]="country.code">
                                     {{country.name}}
@@ -361,9 +388,10 @@
                             </select>
                             <!-- <input type="text" placeholder="Select Country" class="form-control"
                                 formControlName="country"> -->
-                                <span class="text-danger" *ngIf="signUpForm.controls['country'].hasError('required') && isSubmited">
-                                    Country is required <i class="fa fa-exclamation"></i>
-                                </span>
+                            <span class="text-danger"
+                                *ngIf="signUpForm.controls['country'].hasError('required') && isSubmited">
+                                Country is required <i class="fa fa-exclamation"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -371,9 +399,9 @@
                     <div class="form-group">
                         <label for="" class="label">Gender</label>
                         <div class="formFields">
-                            
+
                             <span class="field-icon"><img src="../../../assets/images/icon-gender.svg" alt=""></span>
-                            <select class="form-control" formControlName="gender" >
+                            <select class="form-control" formControlName="gender">
                                 <option value="" disabled selected>Select Gender</option>
                                 <option *ngFor="let gender of GenderOptions" [value]="gender.value">
                                     {{gender.name}}
@@ -381,9 +409,10 @@
                             </select>
                             <!-- <input type="text" placeholder="Select Gender" class="form-control"
                                 formControlName="gender"> -->
-                                <span class="text-danger" *ngIf="signUpForm.controls['gender'].hasError('required') && isSubmited">
-                                    Gender is required <i class="fa fa-exclamation"></i>
-                                </span>
+                            <span class="text-danger"
+                                *ngIf="signUpForm.controls['gender'].hasError('required') && isSubmited">
+                                Gender is required <i class="fa fa-exclamation"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -394,14 +423,15 @@
                             <!-- <span class="field-icon"><img src="../../../assets/images/icon-date.svg" alt=""></span> -->
                             <!-- <input type="text" placeholder="yyyy-dd-mm" class="form-control" formControlName="dob"> -->
                             <mat-form-field appearance="outline">
-                                <input [dropSpecialCharacters]="false" matInput placeholder="YYYY-MM-DD" mask="0000-00-00"
-                                     [leadZeroDateTime]="true" formControlName="dob">
+                                <input [dropSpecialCharacters]="false" matInput placeholder="YYYY-MM-DD"
+                                    mask="0000-00-00" [leadZeroDateTime]="true" formControlName="dob">
                                 <input (dateInput)="OnDateChange($event.value)" hidden="true" matInput
                                     [matDatepicker]="picker" placeholder="Choose your date of birth">
                                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                 <mat-datepicker #picker startView="year"></mat-datepicker>
                             </mat-form-field><br>
-                            <span class="text-danger" *ngIf="signUpForm.controls['dob'].hasError('required') && isSubmited">
+                            <span class="text-danger"
+                                *ngIf="signUpForm.controls['dob'].hasError('required') && isSubmited">
                                 DOB is required <i class="fa fa-exclamation"></i>
                             </span>
                         </div>
@@ -414,9 +444,10 @@
                             <span class="field-icon"><img src="../../../assets/images/icon-education.svg" alt=""></span>
                             <input type="text" placeholder="Enter your highest education" class="form-control"
                                 formControlName="education">
-                                <span class="text-danger" *ngIf="signUpForm.controls['education'].hasError('required') && isSubmited">
-                                    Education is required <i class="fa fa-exclamation"></i>
-                                </span>
+                            <span class="text-danger"
+                                *ngIf="signUpForm.controls['education'].hasError('required') && isSubmited">
+                                Education is required <i class="fa fa-exclamation"></i>
+                            </span>
                         </div>
                     </div>
                 </div>

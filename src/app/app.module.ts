@@ -42,6 +42,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { Ng9PasswordStrengthBarModule } from 'ng9-password-strength-bar';
+
 
 @NgModule({
   declarations: [
@@ -84,6 +86,7 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     HttpClientModule,
     MatInputModule,
+    Ng9PasswordStrengthBarModule,
     ToastrModule.forRoot(),
     NgxMaskModule.forRoot({
       validation: true,

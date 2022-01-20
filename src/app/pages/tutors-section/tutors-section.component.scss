@@ -1,0 +1,15 @@
+.tutorCol{text-align: center; margin: 0 0 40px;}
+.tutorPic{width: 100px; height: 100px; margin: 0 auto 15px;}
+.tutorPic img{height: 100%; width: 100%; border-radius: 50%;}
+.tutorCol h3, .tutorCol h4{font-size: 16px;}
+.tutorCol h3{font-weight: 700; margin-bottom: 15px;}
+.tutorCol h4{color: #5F6774; font-weight: 400; margin-bottom: 15px;}
+.tutorCol .btn{width: 105px; font-size: 13px; font-weight: 700;}
+@media (max-width:767px){
+   .availableTutors{padding-bottom: 0;}
+}
+
+@media (min-width:1280px){
+    .availableTutors{padding-bottom: 20px;}
+    .tutorCol{margin: 20px 0 50px;}
+}

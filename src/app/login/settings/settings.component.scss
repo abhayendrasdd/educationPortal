@@ -1,0 +1,9 @@
+.notifications-card{padding: 24px;}
+.notifications{margin-left: -10px; margin-right: -10px;}
+.notifications > li{display: flex; justify-content: space-between; padding-left: 10px; padding-right: 10px;}
+.notifications > li + li{margin-top: 25px;}
+.noti-label{font-weight: 500;}
+
+.settingsList .form-control{height: auto; padding: 0; text-align: right; width: auto; border: none; padding-right: 30px; color: #212121; font-weight: 700;}
+
+select.form-control{background-image: url(../../../assets/images/select-caret.svg);}

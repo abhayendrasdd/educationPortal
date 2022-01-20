@@ -1,0 +1,32 @@
+footer{background-color: #212121; color: #ffffff; padding: 50px 0 10px;}
+footer h2{font-size: 22px; font-weight: 500;}
+footer h3{font-size: 18px; font-weight: 500; margin-bottom: 20px;}
+.footerTop{margin-bottom: 40px;}
+.getStarted{display: flex; align-items: center; flex-wrap: wrap;}
+.getStarted h2{margin: 10px 30px 10px 0;}
+footer .btn-lg{width: 175px;}
+
+.footerMiddle{border-top: 1px #373737 solid; padding-top: 40px;}
+.newsletterSignUp h2{margin-bottom: 30px;}
+.newsletterForm{border-bottom: 1px #373737 solid; display: flex;}
+.newsletterForm .newsletterInput{background-color: transparent; color: #fff; border: none; height: 50px;}
+.newsletterForm .newsletterInput:focus{border: none; outline: none;}
+.newsletterForm .btn{height:50px; width: 50px; border-radius: 8px 8px 0 0;}
+
+.footerLinks li a{color: #fff; font-size: 14px; margin-bottom: 20px; opacity: 0.8; display: block;}
+.footerLinks li a:hover{opacity: 1; text-decoration: none;}
+
+.footerBottom{margin-top: 20px;}
+.bottomLinks, .socialMedia {margin-left: -15px; margin-right: -15px;}
+.bottomLinks li, .socialMedia li{padding: 5px 15px;}
+.bottomLinks li a, .socialMedia li a{color: #fff;}
+.bottomLinks li a:hover, .socialMedia li a:hover{opacity: 0.8;}
+
+@media (min-width:768px){
+    .newsletterSignUp{max-width: 280px;}
+    .footerBottom{margin-top: 30px;}
+}
+
+@media (max-width:767px){
+    .newsletterSignUp{margin-bottom: 30px;}
+}

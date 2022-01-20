@@ -1,0 +1,39 @@
+.cartItem + .cartItem{padding-top: 24px; margin-top: 20px; border-top: 1px rgba(33,33,33,0.1) solid;}
+.cartItemContent .heading, .cartItemPrice{margin-bottom: 15px; display: block;}
+.cartItemPrice{font-size: 18px; font-weight: 700; color: #D2232A; line-height: 1.2;}
+.cartItemImg{-ms-flex: 0 0 150px; flex: 0 0 150px; max-width: 150px; padding:4px; background-color: #F1F1F1; border-radius: 8px; margin-right: 20px;}
+.cartItemImg img{height: 100%; width: 100%; object-fit: cover; border-radius: 6px;}
+.valueItems{max-width: 320px; }
+.valueItems .valueItem{padding-top:0; padding-bottom: 0;}
+
+.similarCourses{padding-top: 40px;}
+.similarItemRow{margin-left: -5px; margin-right: -5px;}
+.ItemColFrame{box-shadow: 0px 4px 20px rgb(95 103 116 / 10%); background-color: #fff; border-radius: 6px;}
+.ItemColFrame .imgRow img{border-radius: 6px 6px 0 0;}
+.ItemColContent{padding: 10px; font-size: 10px; font-weight: 500;}
+.ItemColContent h4{font-size: 14px; font-weight: 500; }
+.ItemColContent h4,
+.clLink, 
+.stars{margin-bottom: 8px;}
+.clLink a{color: #5F6774;}
+
+.similarItemCol{-ms-flex: 0 0 20%; flex: 0 0 20%; max-width: 20%; padding: 5px;}
+
+@media (min-width:768px){
+    .cartItemContent{padding-right: 75px; position: relative;}
+    .cartItemContent .cartItemPrice{position: absolute; right: 0; top: 0;}
+    .similarCourses{padding-top: 70px;}
+}
+
+@media (min-width:992px){
+    .cartItemContent .courseRating{margin-right: 40px;}
+}
+
+@media (max-width:767px){
+    .cartItemImg{margin-bottom: 15px;}
+    .similarItemCol{-ms-flex: 0 0 33.33%; flex: 0 0 33.33%; max-width: 33.33%;}
+}
+
+@media (max-width:575px){
+    .similarItemCol{-ms-flex: 0 0 100%; flex: 0 0 100%; max-width: 100%;}
+}

@@ -1,0 +1,102 @@
+/*----Banner----*/
+.banner{margin-bottom: 50px;}
+.banner-content {font-weight: 700; color: #5F6774;}
+.banner-content p{margin-bottom: 0;}
+.banner-content h1{font-size: 30px; max-width: 415px; color: #212121; margin-bottom: 10px;}
+.banner-content .btn{height: 40px; min-width: 175px; line-height: 26px; margin-top: 35px;} 
+
+@media (min-width:992px){
+    .banner-content h1{font-size: 40px;}
+}
+
+@media (min-width:1280px){
+    .banner-content h1{font-size: 54px;}
+    .banner{padding-bottom: 130px;}
+}
+
+@media (max-width:767px){
+    .bannerImg{margin-bottom: 30px;}
+}
+
+/*---Logos---*/
+.logosWidget{display: flex; align-items: center; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;}
+.logosWidget > li{margin: 15px;}
+.iconWidget{display: flex; align-items: center; justify-content: center; height: 60px; width: 60px; border-radius: 50%; background-color: #212121;}
+.redBg{background-color: #D2232A;}
+
+.featureCol{max-width: 225px;}
+.featureCol .iconWidget{margin-bottom: 15px;}
+.featureCol p{color:#5F6774; font-size: 14px; margin-bottom: 0;}
+.featureCol h3{font-size: 18px; margin-bottom: 10px;}
+
+@media (min-width:768px){
+    .logosWidget > li{margin: 20px 30px;}
+    .featuresWidget .title{max-width: 600px;}
+}
+
+@media (min-width:1280px){
+    .logosWidget > li{margin: 25px 50px;}
+    .featuresWidget .title h2{font-size: 28px;}
+    .homeTopSection{padding-bottom: 50px;}
+}
+
+@media (max-width:1279px){
+    .featureCol{padding: 0 40px; max-width: inherit;}
+}
+
+/*----Explore SEP Services---*/
+.exploreCol {box-shadow: 0px 4px 20px rgba(95, 103, 116, 0.1); background-color: #fff; border-radius:12px;}
+.exploreCol h3{font-size: 15px; text-align: center; padding: 20px 15px;}
+
+/*----Contact Bottom----*/
+
+.contactHome p{color: #5F6774;}
+.infoTextP{margin-bottom: 30px;}
+.contactMedi{font-size: 18px; font-weight: 500;}
+.contactMedi li + li{margin-top: 10px;}
+
+.findUsAt{margin-top: 30px; padding-top: 30px; border-top: 2px solid #EBEAED; }
+.findUsAt h3{font-size: 22px; font-weight: 500; margin-bottom: 15px;}
+.findUsAdd > li{font-size: 14px; max-width: 255px;}
+.findUsAdd > li + li{margin-top: 25px;}
+.findUsAdd > li h4{text-transform: uppercase; font-size: 14px; margin-bottom: 10px;}
+
+.rightContactInfo .whiteFrame{padding: 20px;}
+.rightContactInfo .form-control{border-radius: 30px; height: 50px; padding: 10px 24px;}
+.rightContactInfo textarea.form-control{border-radius: 10px; height: 170px; font-size: 18px; font-weight: 500;}
+.label{color: #1E0E62; text-transform: uppercase; font-size: 14px; margin-bottom: 10px; font-weight: 500;}
+.rightContactInfo .form-group{margin-bottom: 35px;}
+.rightContactInfo .form-control::-webkit-input-placeholder { /* Edge */
+    font-size: 18px;
+    color: #5F6774;
+  }
+  
+  .rightContactInfo .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-size: 18px;
+    color: #5F6774;
+  }
+  
+  .rightContactInfo .form-control::placeholder {
+    font-size: 18px;
+    color: #5F6774;
+  }
+
+  .twoColumnRow{display: flex;}
+  .twoColumnRow .form-control{margin-right: 10px;}
+  .rightContactInfo .btn{border-radius: 30px; min-width: 90px; font-size: 18px; font-weight: 500;}
+
+@media (min-width:768px){
+    .rightContactInfo .whiteFrame{padding: 30px;}
+    .leftContactInfo{max-width: 368px;}
+    .rightContactInfo{max-width: 470px;}
+}
+
+@media (min-width:1280px){
+    .rightContactInfo .whiteFrame{padding: 50px;}
+}
+
+@media (max-width:767px) {
+    .rightContactInfo{margin-top: 30px;}
+}
+
+

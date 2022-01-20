@@ -1,0 +1,75 @@
+<section class="section cartSection">
+    <div class="container">
+        <div class="title">
+            <h2>Checkout Cart</h2>
+        </div>
+        <h3 class="heading">Payment Method</h3>
+        <div class="row row10">
+            <div class="col-md-8">                
+                <div class="paymentWidget font-medium">
+                    <div class="paymentMethod">
+                        <div class="customRadio">
+                            <input type="radio" id="Stripe" name="radio-group">
+                            <label for="Stripe">Stripe</label>
+                        </div>
+                    </div>
+                    <div class="paymentMethod">
+                        <div class="customRadio">
+                            <input type="radio" id="CD-card" name="radio-group">
+                            <label for="CD-card">Credit or debit card</label>
+                        </div>
+                        <div class="cCardForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="label">Card Number</label>
+                                        <div class="formFields">
+                                            <span class="field-icon"><img src="../../../assets/images/icon-card-number.svg" alt=""></span>
+                                            <input type="text" placeholder="0000  0000  0000  0000" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="label">Expiry Date</label>
+                                        <div class="formFields">
+                                            <span class="field-icon"><img src="../../../assets/images/icon-cal.svg" alt=""></span>
+                                            <input type="text" placeholder="MM/YY" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="label">CVC/CVV</label>
+                                        <div class="formFields">
+                                            <span class="field-icon"><img src="../../../assets/images/icon-lock-o.svg" alt=""></span>
+                                            <input type="text" placeholder="---" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                        <p class="secureText">Your transaction is secured with SSL encryption</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="cartItemSide">                    
+                    <h3 class="heading">Total</h3>
+                    <h4 class="primary-color"><span class="ruppeeSign">&#8377;</span> 910</h4>
+                    <p class="price"><s>&#8377; 1820</s> 50% off</p>
+                    <button class="btn btn-primary btn-lg">Buy Now</button>
+
+                    <div class="promotionsCode">
+                        <h5 class="heading">Promotions</h5>
+                        <form class="codeForm d-flex">
+                            <input type="text" placeholder="Enter Promo Code" class="form-control">
+                            <button class="btn btn-primary">Apply</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

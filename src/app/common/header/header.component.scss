@@ -1,0 +1,95 @@
+.search-input{background: #fff url(../../../assets/images/search-icon.svg) no-repeat 10px center; padding-left: 30px;}
+.navbar{padding: 1.5rem 1rem;}
+.navbar-expand-lg .navbar-nav .dropdown-menu{padding-top: 5px;}
+.subMenu,
+.dropdown-menu{ /*border-top: 2px #59606c solid;*/ padding: 0; border-radius: 0;  font-size: 12px; background-color: #fff;}
+.subMenu::after,
+.dropdown-menu::after{position: absolute; width: calc(100% + 2px); height: 2px; content: " "; background-color:#59606c; top: 0; left: -1px;}
+// .dropdown-menu li{position: relative;}
+.dropdown-menu .dropdown-item{padding: 10px 20px; display: block; font-weight: 500; }
+.dropdown-menu .dropdown-item:hover{background-color: transparent; color: #D2232A;}
+.dropdown-menu ul.dropdown-menu{display: block; left: 100%; top: 0;}
+
+.navbar-light .navbar-nav .loginBtn .btn{min-width: 105px; font-size: 13px; font-weight: 700;}
+.navbar-light .navbar-nav .signupBtn{margin-right: 0;}
+
+/*---Custom Menu----*/
+.dropdownMenu{display: none; position: absolute; left: 0; top: 100%;}
+.navbar-nav li:hover > a{color: #D2232A;}
+.navbar-nav li:hover .dropdownMenu{display: block;}
+
+.dropdownMenu li{position: static; }
+.subMenu{left: 100%; top: 0; position: absolute; height: calc(100% + 1px);}
+.dropdown ul{display: none;}
+.dropdown:hover > a + ul{display: block;}
+
+.dropdown > a{position: relative;}
+.dropdown > a:after{background: url(../../../assets/images/icon-right-arrow.svg) no-repeat center center; content: " "; width: 6px; height: 10px; right: 15px; position: absolute; top: 50%; margin-top: -5px;}
+
+.dropdown-menu-right{left: auto; right: 0;}
+.dropdown-menu-right .subMenu{right:100%; left: auto;}
+
+.dropdown-menu-right .dropdown > a:after{transform: rotate(180deg);}
+
+@media (min-width:992px){
+    .subMenu,
+   .dropdown-menu{min-width: 275px; border:1px #e6e5e3 solid; border-top: none; box-shadow: 0 4px 10px 0 rgba(33,33,33,0.04);}
+   .navbar-light .navbar-nav .loginBtn{margin-right: 20px;}
+}
+
+@media (max-width:991px){
+    .navbar-light .navbar-nav .nav-item{margin: 0; border-bottom: 1px solid rgba(33, 33, 33, 0.1);}
+    .navbar-light .navbar-nav .nav-item.btn-group{display: block;}
+    .navbar-light .navbar-nav .nav-item > a{width: 100%; padding: 10px 0; }
+
+    .navbar-light .navbar-nav .nav-item .dropdown-toggle::after{position: absolute; right: 0; top: 20px;}
+    .loginBtn{padding: 10px 0;}
+    .loginBtn .btn{width: 100%;}
+
+    .dropdownMenu,
+    .subMenu{position: static;}
+    .dropdownMenu ul li ul{margin-left: 20px;}
+}
+
+.userLogin .dropdown-menu{max-width: 340px; border: none; border-radius: 15px; font-size: 16px; padding-bottom: 15px; box-shadow: 0 0 20px 0 rgb(33 33 33 / 6%); margin-top: 10px;}
+.userLogin .dropdown-menu:after{display: none;}
+.userLogin .dropdown-menu .dropdown-item{color: #5F6774;}
+.userLogin .dropdown-menu .dropdown-item:hover{color: #D2232A;}
+.ddHead{padding: 10px 20px 5px; font-weight: 700; margin-bottom: 0;}
+
+.userLogin > a img{height: 40px; width: 40px; border-radius: 50%; object-fit: cover;}
+.userLogin > a{position: relative; padding-right: 20px; font-size: 14px;}
+.userLogin > a:after{background: url(../../../assets/images/icon-right-arrow.svg) no-repeat center center;
+    content: " ";
+    width: 6px;
+    height: 10px;
+    right: 0;
+    position: absolute;
+    top: 20px;
+    margin-top: -5px; border: none; -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg);}
+
+/*---Popup---*/
+.formWidget .form-group{margin-bottom: 25px;}
+.forgot-password{text-align: right; margin-top: -15px;}
+.forgot-password a{color: rgba(33,33,33,0.4);}
+.forgot-password a:hover{color: rgba(33,33,33,1);}
+
+.otherLogin > p{margin: 24px 0; text-align: center;}
+.loginWith{margin-left: -8px; margin-right: -8px; font-size: 14px;}
+.loginWith > li{padding: 0 8px 15px; }
+.loginWith > li a{display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; border: 1px rgba(33, 33, 33, 0.1) solid; padding: 15px; border-radius: 6px;}
+.loginWith > li a i{margin-right: 10px;}
+.fa-apple{font-size: 18px;}
+
+.orDiv{margin-bottom: 20px; color: rgba(33, 33, 33, 0.5); text-align: center;}
+.modalSubtext{margin: -25px 0 15px; text-align: center; color: rgba(33, 33, 33, 0.5);}
+.forgotPassInfo{text-align: center; max-width: 305px; margin: 0 auto 1rem;}
+
+.passwordType{display: flex; margin: 10px -2px 0;}
+.passwordType li{-ms-flex: 0 0 25%; flex: 0 0 25%; max-width: 25%; padding: 0 2px;}
+.passwordType span{background-color: rgba(95,103,116,0.2); height: 3px;  border-radius: 4px; display: block;}
+
+@media (min-width:576px){
+    .loginWith{display: flex;}
+    .loginWith > li{-ms-flex: 0 0 33.33%; flex: 0 0 33.33%; max-width: 33.33%;}
+}

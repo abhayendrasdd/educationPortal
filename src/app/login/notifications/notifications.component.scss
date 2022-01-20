@@ -1,0 +1,9 @@
+.notifications-card{padding: 24px;}
+.notifications{margin-left: -10px; margin-right: -10px;}
+.notifications > li{display: flex; justify-content: space-between; padding-left: 10px; padding-right: 10px;}
+.notifications > li + li{margin-top: 25px;}
+.noti-label{font-weight: 500;}
+
+@media (min-width:1280px){
+    .switch{margin-right: 15px;}
+}

@@ -1,0 +1,14 @@
+.groupsCol{padding: 24px; margin-bottom: 30px;}
+.groupsCol h3{font-size: 18px; margin-bottom: 15px;}
+.groupCreatedDateTime{display: flex; flex-wrap: wrap; font-size: 14px; margin-bottom: 15px;}
+.groupDate{margin-right: 20px;}
+.oneTime{color: #5F6774;}
+
+@media (min-width:768px){
+    .groupDate{margin-right: 30px;}
+}
+
+@media (min-width:1280px){
+    .groupDate{margin-right: 45px;}
+    .groupsCol h3{font-size: 20px;}
+}

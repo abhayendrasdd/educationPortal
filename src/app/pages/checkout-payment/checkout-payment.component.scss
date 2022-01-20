@@ -1,0 +1,7 @@
+.paymentMethod + .paymentMethod{margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(33,33,33,0.1);}
+.paymentMethod .customRadio [type="radio"]:checked + label:before,
+.paymentMethod .customRadio [type="radio"]:not(:checked) + label:before{border-color: #212121;}
+.cCardForm{margin-top: 25px;}
+.cCardForm .form-control,
+.cCardForm .formFields .field-icon{height: 38px;}
+.cCardForm .form-group{margin-bottom: 1.5rem;}

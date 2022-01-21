@@ -197,7 +197,7 @@
             </div>
             <p class="forgot-password"><a href="javascript:void(0)"
                     (click)="openModal4(forgotpassword); closeFirstModal()">Forgot Password?</a></p>
-            <div class="captcha"><img src="../../../assets/images/recaptcha.png" alt=""></div>
+            <!-- <div class="captcha"><img src="../../../assets/images/recaptcha.png" alt=""></div> -->
             <div class="otherLogin">
                 <p>Or Login with</p>
                 <ul class="loginWith">
@@ -366,12 +366,20 @@
                         <label for="" class="label">Phone No.</label>
                         <div class="formFields">
                             <span class="field-icon"><img src="../../../assets/images/icon-phone.svg" alt=""></span>
-                            <input type="number" placeholder="Phone Number" class="form-control"
+                            <input type="text" placeholder="Phone Number" class="form-control"
                                 formControlName="phone">
                             <span class="text-danger"
                                 *ngIf="signUpForm.controls['phone'].hasError('required') && isSubmited">
                                 Phone is required <i class="fa fa-exclamation"></i>
                             </span>
+                            <span class="text-danger"
+                            *ngIf="signUpForm.controls['phone'].hasError('minlength') && isSubmited">
+                            Phone should be of 10 digits <i class="fa fa-exclamation"></i>
+                        </span>
+                        <span class="text-danger"
+                            *ngIf="signUpForm.controls['phone'].hasError('maxlength') && isSubmited">
+                            Phone should be of 10 digits <i class="fa fa-exclamation"></i>
+                        </span>
                         </div>
                     </div>
                 </div>
@@ -467,7 +475,7 @@
                     <li><a href="javascript:void(0)"><i class="fab fa-apple"></i> <span>Apple</span></a></li>
                 </ul>
             </div>
-            <div class="formButton mt-3 text-center"><button class="btn btn-primary btn-md">Sign Up</button></div>
+            <div class="formButton mt-3 text-center"><button class="btn btn-primary btn-md" >Sign Up</button></div>
         </form>
     </div>
 </ng-template>

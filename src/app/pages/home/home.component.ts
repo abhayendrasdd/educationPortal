@@ -64,6 +64,15 @@ export class HomeComponent implements OnInit {
   mailForm!: FormGroup;
   isSubmited: boolean = false;
 
+  settingsRecords : any;
+  sagsonContact: any;
+  sagsonEmail: any;
+  new_york_address_line_1: any;
+  new_york_address_line_2: any;
+  san_francisco_line_1: any;
+  san_francisco_line_2: any;
+  dubai_line_1: any;
+  dubai_line_2: any;
 
   constructor(
     private fb: FormBuilder,
@@ -76,26 +85,75 @@ export class HomeComponent implements OnInit {
       message: ['', [Validators.required]],
       phone: ['1234567890']
     });
+
+    this.getSettings();
+    this.getSagsonContact();
+    this.getSagsonEmail();
    }
 
   ngOnInit(): void {
   }
 
   onContactSubmit() {
-    console.log("Submitted Values ", this.mailForm.value)
     if (this.mailForm.invalid) {
       this.isSubmited = true;
       return
     }
     this.sharedService.addContacts(this.mailForm.value).subscribe((res:any)=>{
-      console.log("addContacts response",res);
       if(res.status == 200) {
-        this.toastr.success("Success");
+        this.toastr.success(res.data);
+        this.mailForm.reset();
       } else {
         this.toastr.error("Error");
       }
     })
 
+  }
+
+  getSettings(){
+    this.sharedService.getSetting().subscribe((res:any)=>{
+      if(res.status == 200) {
+        this.settingsRecords = res.data;
+        console.log("getSetting response",res.data);
+        this.settingsRecords.filter((ele:any)=>{
+          if(ele.s_key == 'new_york_address_line_1'){
+            this.new_york_address_line_1 = ele.value;
+          } else if(ele.s_key == 'New_york_address_line_2'){
+            this.new_york_address_line_2 = ele.value;
+          }else if(ele.s_key == 'san_francisco_line_1'){
+            this.san_francisco_line_1 = ele.value;
+          }else if(ele.s_key == 'San_francisco_line_2'){
+            this.san_francisco_line_2 = ele.value;
+          }else if(ele.s_key == 'dubai_line_1'){
+            this.dubai_line_1 = ele.value;
+          }else if(ele.s_key == 'Dubai_line_2'){
+            this.dubai_line_2 = ele.value;
+          }
+        })
+      } else {
+        this.toastr.error("Error");
+      }
+    })
+  }
+
+   getSagsonContact(){
+    this.sharedService.getSettingValues({ s_key : 'sagson_contact'}).subscribe((res:any)=>{
+      if(res.status == 200) {
+        this.sagsonContact = res.data[0].value;
+      } else {
+        this.toastr.error("Error");
+      }
+    })
+  }
+
+  getSagsonEmail(){
+    this.sharedService.getSettingValues({ s_key : 'sagson_contact_email'}).subscribe((res:any)=>{
+      if(res.status == 200) {
+        this.sagsonEmail = res.data[0].value;
+      } else {
+        this.toastr.error("Error");
+      }
+    })
   }
 
 }

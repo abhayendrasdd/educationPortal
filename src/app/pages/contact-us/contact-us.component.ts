@@ -22,7 +22,7 @@ export class ContactUsComponent implements OnInit {
     this.contactUsForm = this.fb.group({
       full_name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
+      phone: ['', [Validators.required , Validators.minLength(10), Validators.maxLength(10) ] ],
       message: ['', Validators.required]
     });
 
@@ -33,15 +33,14 @@ export class ContactUsComponent implements OnInit {
 
 
   onSubmit() {
-    console.log("Contact us value ==> ", this.contactUsForm.value)
     if (this.contactUsForm.invalid) {
       this.isSubmited = true;
       return
     }
     this.sharedService.addContacts(this.contactUsForm.value).subscribe((res:any)=>{
-      console.log("addContacts response",res);
       if(res.status == 200) {
-        this.toastr.success("Success");
+        this.toastr.success(res.data);
+        this.contactUsForm.reset();
       } else {
         this.toastr.error("Error");
       }

@@ -293,7 +293,7 @@
 <section class="section contactHome grayBg">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" >
                 <div class="leftContactInfo">
                     <div class="title">
                         <h2>Get in Touch</h2>
@@ -301,8 +301,8 @@
                     <p class="infoTextP">We appreciate each customer and we are proud that 60% of clients come back to
                         work with us again.</p>
                     <ul class="contactMedi">
-                        <li>+1 555 505 5050</li>
-                        <li>info@sagson.com</li>
+                        <li *ngIf="sagsonContact">{{sagsonContact}}</li>
+                        <li *ngIf="sagsonContact">{{sagsonEmail}}</li>
                     </ul>
 
                     <div class="findUsAt">
@@ -310,16 +310,19 @@
                         <ul class="findUsAdd">
                             <li>
                                 <h4>New York, NY</h4>
-                                <p>62 West 55th Street, Suite 302 New York, NY, 10230</p>
+                                <p *ngIf="new_york_address_line_1">{{new_york_address_line_1}}</p>
+                                <p *ngIf="new_york_address_line_2">{{new_york_address_line_2}}</p>
                             </li>
                             <li>
                                 <h4>San Francisco, CA</h4>
-                                <p>560 Judah St & 15th Ave, Apt. 5 San Francisco, CA, 230903</p>
-                            </li>
+                                <p *ngIf="san_francisco_line_1">{{san_francisco_line_1}}</p>
+                                <p *ngIf="san_francisco_line_2">{{san_francisco_line_2}}</p>
+                             </li>
                             <li>
                                 <h4>Dubai</h4>
-                                <p>U237-02, Gold Tower, Jumeirah Lakes Towers, Dubai, UAE</p>
-                            </li>
+                                <p *ngIf="dubai_line_1">{{dubai_line_1}}</p>
+                                <p *ngIf="dubai_line_2">{{dubai_line_2}}</p>     
+                             </li>
                         </ul>
                     </div>
                 </div>

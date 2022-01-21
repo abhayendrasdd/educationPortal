@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
+import { SharedService } from 'src/app/services/shared.service';
 import { UserService } from 'src/app/services/user.service';
 // import { UserService } from 'src/app/services/user.service';
 // import { HttpClient } from '@angular/common/http'
@@ -46,6 +47,8 @@ export class HeaderComponent implements OnInit {
   ]
 
 
+  courses: any = []
+
   public account = {
     password: <string><unknown>null
   };
@@ -57,7 +60,8 @@ export class HeaderComponent implements OnInit {
     private fb: FormBuilder,
     private userService: UserService,
     private toastrService: ToastrService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private sharedService: SharedService
   ) {
 
     this.signUpForm = this.fb.group({
@@ -65,7 +69,7 @@ export class HeaderComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       // password: ['', [Validators.required, Validators.minLength(8)]],
       password: [null, [Validators.required, Validators.minLength(8), Validators.maxLength(30), Validators.pattern('(?=\\D*\\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{8,30}')]],
-      phone: ['', [Validators.required]],
+      phone: ['', [Validators.required,Validators.minLength(10), Validators.maxLength(10) ]],
       gender: ['', [Validators.required]],
       dob: ['', [Validators.required]],
       education: ['', [Validators.required]],
@@ -88,15 +92,46 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.getCategoryCourses();
+    this.getAllCourseCategories()
   }
+
+
+  getCategoryCourses() {
+    let data = {
+      category_id: '',
+      language_id: '',
+      duration: '',
+      subject: ''
+    }
+    this.sharedService.getCategoryCourse(data).subscribe((res: any) => {
+      if (res) {
+        console.log("getCategoryCourses ==> ", res)
+      } else {
+        this.toastrService.error("Error")
+      }
+    })
+  }
+
+  getAllCourseCategories() {
+    this.sharedService.getAllCourseCategories().subscribe((res: any) => {
+      if (res.status == 200) {
+        this.courses = res.data;
+        console.log("getAllCourseCategories ==> ", this.courses)
+
+      } else {
+        this.toastrService.error("Error")
+      }
+    })
+  }
+
 
   OnDateChange(event: any) {
     this.signUpForm.get('dob')?.setValue(moment(event).format('YYYY-MM-DD'));
   }
 
+
   onOtpSubmit() {
-    console.log("onOtpSubmit Values ", this.otpForm.value)
     if (this.otpForm.invalid) {
       return
     }
@@ -105,6 +140,8 @@ export class HeaderComponent implements OnInit {
 
   }
 
+
+
   onSignUpSubmit() {
 
     if (this.signUpForm.invalid) {
@@ -112,13 +149,11 @@ export class HeaderComponent implements OnInit {
       return
     }
 
-    // var splitUserName = this.signUpForm.value.username.split(' '); 
-    // this.signUpForm.value.firstname = splitUserName[0]
-    // this.signUpForm.value.lastname = splitUserName[1]
-    const [firstName, lastName] = this.signUpForm.value.username.split(' ');
+    const [firstName, lastName] = this.signUpForm.value.username.trim().split(' ');
     this.signUpForm.value.firstname = firstName
     this.signUpForm.value.lastname = lastName
-    this.signUpForm.value.username = this.signUpForm.value.username.split(' ').join('_');
+    this.signUpForm.value.username = this.signUpForm.value.username.trim().split(' ').join('_');
+    this.signUpForm.value.username = this.signUpForm.value.username.toLowerCase()
     this.signUpForm.value.role = "2";
     this.signUpForm.value.status = "active";
     this.signUpForm.value.remember_token = "sfadsgfdgfdasg";

@@ -29,14 +29,22 @@
                         <div class="col-md-6 form-group30">
                             <input type="text" class="form-control" placeholder="Your phone" formControlName="phone">
                             <span class="text-danger"
-                            *ngIf="contactUsForm.controls['phone'].hasError('required') && isSubmited">
-                            Phone is required <i class="fa fa-exclamation"></i>
-                        </span>
+                                *ngIf="contactUsForm.controls['phone'].hasError('required') && isSubmited">
+                                Phone is required <i class="fa fa-exclamation"></i>
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="contactUsForm.controls['phone'].hasError('minlength') && isSubmited">
+                                Phone should be of 10 digits <i class="fa fa-exclamation"></i>
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="contactUsForm.controls['phone'].hasError('maxlength') && isSubmited">
+                                Phone should be of 10 digits <i class="fa fa-exclamation"></i>
+                            </span>
                         </div>
                         <div class="col-md-12 form-group30">
                             <textarea class="form-control h-170" placeholder="Your message"
                                 formControlName="message"></textarea>
-                                <span class="text-danger"
+                            <span class="text-danger"
                                 *ngIf="contactUsForm.controls['message'].hasError('required') && isSubmited">
                                 Message is required <i class="fa fa-exclamation"></i>
                             </span>

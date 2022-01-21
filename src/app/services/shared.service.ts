@@ -19,6 +19,13 @@ export class SharedService {
       );
   }
 
+  // getCategoryCourse(data: any): Observable<any> {
+  //   return this.http.get(`${this.apiUrl}api/get-category-courses`)
+  //     .pipe(
+  //       catchError(this.handleError('Error', []))
+  //     );
+  // }
+
   getCategoryCourse(data: any): Observable<any> {
     return this.http.get(`${this.apiUrl}api/get-category-courses?category_id=${data.category_id}&language_id=${data.language_id}&duration=${data.duration}&level=5&subject=${data.subject}`)
       .pipe(
@@ -40,16 +47,22 @@ export class SharedService {
       );
   }
 
-
-  getFAQs(course_id: any): Observable<any> {
-    return this.http.get(`${this.apiUrl}api/get-faqs/{course_id}?course_id=${course_id}`)
+  getFAQs(data: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}api/get-faqs/{course_id}?course_id=${data.course_id}`)
       .pipe(
         catchError(this.handleError('Error', []))
       );
   }
 
   getSettingValues(data: any): Observable<any> {
-    return this.http.get(`${this.apiUrl}api/get_setting_value`)
+    return this.http.get(`${this.apiUrl}api/get-settings?s_key=${data.s_key}`)
+      .pipe(
+        catchError(this.handleError('Error', []))
+      );
+  }
+
+  getSetting(): Observable<any> {
+    return this.http.get(`${this.apiUrl}api/get-settings`)
       .pipe(
         catchError(this.handleError('Error', []))
       );

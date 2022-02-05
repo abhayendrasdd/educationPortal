@@ -24,33 +24,38 @@ import { ServicesComponent } from './pages/services/services.component';
 import { TutorsSectionComponent } from './pages/tutors-section/tutors-section.component';
 
 const routes: Routes = [
-  {path:"", component:HomeComponent},
-  {path:"services", component:ServicesComponent},
-  {path:"category/:cource/:category_id", component:SearchResultsComponent, runGuardsAndResolvers: 'always',},
-  {path:"course-details", component:CourseDetailsComponent},
-  {path:"cart", component:CheckoutCartComponent},
-  {path:"payment", component:CheckoutPaymentComponent},
-  {path:"frequently-asked-questions", component:FaqComponent},
-  {path:"contact-us", component:ContactUsComponent},
-  {path:"about-us", component:AboutUsComponent},
-  {path:"resources", component:ResourcesComponent},
-  {path:"careers", component:CareersComponent},
-  {path:"interview-skills", component:InterviewSkillsComponent},
-  {path:"employment-program", component:EmploymentProgramComponent},
-  {path:"tutors", component:TutorsSectionComponent},
-  {path:"group-details", component:GroupDetailsComponent},
+  { path: '', component: HomeComponent },
+  { path: 'services', component: ServicesComponent },
+  // {path:"category/:cource/:category_id", component:SearchResultsComponent, runGuardsAndResolvers: 'always',},
+  {
+    path: 'category/:slug',
+    component: SearchResultsComponent,
+    runGuardsAndResolvers: 'always',
+  },
+  { path: 'course-details', component: CourseDetailsComponent },
+  { path: 'cart', component: CheckoutCartComponent },
+  { path: 'payment', component: CheckoutPaymentComponent },
+  { path: 'frequently-asked-questions', component: FaqComponent },
+  { path: 'contact-us', component: ContactUsComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'resources', component: ResourcesComponent },
+  { path: 'careers', component: CareersComponent },
+  { path: 'interview-skills', component: InterviewSkillsComponent },
+  { path: 'employment-program', component: EmploymentProgramComponent },
+  { path: 'tutors', component: TutorsSectionComponent },
+  { path: 'group-details', component: GroupDetailsComponent },
 
-  {path:"dashboard", component:DashboardComponent},
-  {path: "groups", component:GroupsComponent},
-  {path:"my-account", component:MyAccountComponent},
-  {path:"enrolled-courses", component:EnrolledCoursesComponent},
-  {path:"transaction-logs", component:TransactionLogsComponent},
-  {path:"notifications", component:NotificationsComponent},
-  {path:"settings", component:SettingsComponent}
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'groups', component: GroupsComponent },
+  { path: 'my-account', component: MyAccountComponent },
+  { path: 'enrolled-courses', component: EnrolledCoursesComponent },
+  { path: 'transaction-logs', component: TransactionLogsComponent },
+  { path: 'notifications', component: NotificationsComponent },
+  { path: 'settings', component: SettingsComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

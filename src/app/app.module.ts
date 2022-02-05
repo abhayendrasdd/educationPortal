@@ -43,8 +43,12 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Ng9PasswordStrengthBarModule } from 'ng9-password-strength-bar';
-
-
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
+import { AppleSigninModule } from 'ngx-apple-signin';
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,9 +95,29 @@ import { Ng9PasswordStrengthBarModule } from 'ng9-password-strength-bar';
     NgxMaskModule.forRoot({
       validation: true,
     }),
-    CollapseModule.forRoot(), TabsModule.forRoot(), AccordionModule.forRoot(), ModalModule.forRoot()
+    CollapseModule.forRoot(), TabsModule.forRoot(), AccordionModule.forRoot(), ModalModule.forRoot(),
+    SocialLoginModule,AppleSigninModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '619926919579-2lt0f2b2jqke7hqs0jm77gb4qukq1nqo.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider( '282577308941815')
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

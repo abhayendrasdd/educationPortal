@@ -1,8 +1,11 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import * as moment from 'moment';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
+import { Observable } from 'rxjs';
 import { SharedService } from 'src/app/services/shared.service';
 import { UserService } from 'src/app/services/user.service';
 // import { UserService } from 'src/app/services/user.service';
@@ -61,7 +64,9 @@ export class HeaderComponent implements OnInit {
     private userService: UserService,
     private toastrService: ToastrService,
     private modalService: BsModalService,
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private socialAuthService: SocialAuthService,
+    private router: Router
   ) {
 
     this.signUpForm = this.fb.group({
@@ -92,14 +97,19 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getCategoryCourses();
+    // this.getCategoryCourses();
     this.getAllCourseCategories()
+    this.socialAuthService.authState.subscribe((user) => {
+      if (user != null) {
+        console.log(user)
+      }
+    });
   }
 
 
-  getCategoryCourses() {
+  getCategoryCourses(category_id:any) {
     let data = {
-      category_id: '',
+      category_id: category_id,
       language_id: '',
       duration: '',
       subject: ''
@@ -118,7 +128,6 @@ export class HeaderComponent implements OnInit {
       if (res.status == 200) {
         this.courses = res.data;
         console.log("getAllCourseCategories ==> ", this.courses)
-
       } else {
         this.toastrService.error("Error")
       }
@@ -187,6 +196,13 @@ export class HeaderComponent implements OnInit {
       return
     }
 
+  }
+  signInWithGoogle(): void {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID)
+  }
+
+  signInWithFB(): void {
+    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
   // toggleDisplay() {
@@ -275,4 +291,8 @@ export class HeaderComponent implements OnInit {
     this.modalService.hide(modalId);
   }
 
+  gotoCourseDetailPage(route:any){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+this.router.navigate([`category/${route.name}/${route.id}`]));
+  }
 }

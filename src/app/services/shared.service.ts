@@ -27,7 +27,7 @@ export class SharedService {
   // }
 
   getCategoryCourse(data: any): Observable<any> {
-    return this.http.get(`${this.apiUrl}api/get-category-courses?category_id=${data.category_id}&language_id=${data.language_id}&duration=${data.duration}&level=5&subject=${data.subject}`)
+    return this.http.get(`${this.apiUrl}api/get-category-courses?category_id=${data.category_id}&language_id=${data.language_id}&duration=${data.duration}&level=${data.level}&subject=${data.subject}`)
       .pipe(
         catchError(this.handleError('Error', []))
       );

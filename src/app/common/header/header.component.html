@@ -12,7 +12,7 @@
                 <li class="order-lg-2 headerSearch">
                     <form class="my-2 my-lg-0">
                         <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search"
-                            routerLink="/search-results">
+                            >
                     </form>
                 </li>
                 <li class="nav-item order-lg-1 ml-0 btn-group" dropdown>
@@ -22,37 +22,16 @@
                     </a>
                     <div class="dropdownMenu dropdown-menu">
                         <ul>
-                            <li class="dropdown"><a class="dropdown-item" href="#">Business</a></li>
-                            <li class="dropdown"><a class="dropdown-item" href="#">Computer Science</a></li>
-                            <li class="dropdown"><a class="dropdown-item" href="#">Information Technology</a>
-                                <ul class="subMenu">
-                                    <li class="dropdown"><a class="dropdown-item" href="#">IT Certifications</a>
-                                        <ul class="subMenu">
-                                            <li><a class="dropdown-item" href="#">IT Certifications</a></li>
-                                            <li><a class="dropdown-item" href="#">Network &amp; Security</a></li>
-                                            <li><a class="dropdown-item" href="#">Hardware</a></li>
-                                            <li><a class="dropdown-item" href="#">Operating System &amp; Servers</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#">Other IT &amp; Software</a></li>
+                            <li class="dropdown" *ngFor="let course of courses"><a class="dropdown-item" href="javascript:void(0)"  (click)="gotoCourseDetailPage(course)" >{{course?.name}}</a>
+                                <ul class="subMenu" *ngIf="course?.children_recursive && course?.children_recursive.length > 0">
+                                    <li class="dropdown" *ngFor="let item of course?.children_recursive"><a class="dropdown-item" href="javascript:void(0)" (click)="gotoCourseDetailPage(item)">{{item?.name}}</a>
+                                        <ul class="subMenu" *ngIf="item?.children_recursive && item?.children_recursive.length > 0">
+                                            <li *ngFor="let list of item?.children_recursive"><a class="dropdown-item" href="javascript:void(0)" (click)="gotoCourseDetailPage(list)">{{list?.name}}</a></li>y
                                         </ul>
-                                    </li>
-                                    <li class="dropdown"><a class="dropdown-item" href="#">Network &amp; Security</a>
-                                    </li>
-                                    <li class="dropdown"><a class="dropdown-item" href="#">Hardware</a></li>
-                                    <li class="dropdown"><a class="dropdown-item" href="#">Operating System &amp;
-                                            Servers</a></li>
-                                    <li class="dropdown"><a class="dropdown-item" href="#">Other IT &amp; Software</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a class="dropdown-item" href="#">Language Learing</a></li>
-                            <li class="dropdown"><a class="dropdown-item" href="#">Health</a></li>
-                            <li class="dropdown"><a class="dropdown-item" href="#">Personal Development</a></li>
-                            <li class="dropdown"><a class="dropdown-item" href="#">Physical Science and Engineering</a>
-                            </li>
-                            <li class="dropdown"><a class="dropdown-item" href="#">Social Science</a></li>
-                            <li class="dropdown"><a class="dropdown-item" href="#">Arts and Humanities</a></li>
-                            <li class="dropdown"><a class="dropdown-item" href="#">Math and Logic</a></li>
+                            
                         </ul>
                     </div>
                     <!-- <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
@@ -201,9 +180,15 @@
             <div class="otherLogin">
                 <p>Or Login with</p>
                 <ul class="loginWith">
-                    <li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a></li>
-                    <li><a href="javascript:void(0)"><i class="fab fa-google"></i> <span>Google</span></a></li>
-                    <li><a href="javascript:void(0)"><i class="fab fa-apple"></i> <span>Apple</span></a></li>
+                    <li><a href="javascript:void(0)" (click)="signInWithFB()"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a></li>
+                    <li><a href="javascript:void(0)" (click)="signInWithGoogle()"><i class="fab fa-google"></i> <span>Google</span></a></li>
+                    <li><a href="javascript:void(0)" ><i class="fab fa-apple"></i> 
+                         <!-- <apple-signin   [state]="'sign in'"
+                        [redirectURI]="'https://localhost:4200/'"
+                        [scope]="'name email'"
+                        [clientId]="'com.pizzapizza.web'"
+                        >Apple</apple-signin> -->
+                    </a></li>
                 </ul>
             </div>
             <div class="formButton mt-3 text-center"><button type="button" class="btn btn-primary btn-md"

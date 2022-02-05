@@ -26,7 +26,7 @@ import { TutorsSectionComponent } from './pages/tutors-section/tutors-section.co
 const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"services", component:ServicesComponent},
-  {path:"search-results", component:SearchResultsComponent},
+  {path:"category/:cource/:category_id", component:SearchResultsComponent, runGuardsAndResolvers: 'always',},
   {path:"course-details", component:CourseDetailsComponent},
   {path:"cart", component:CheckoutCartComponent},
   {path:"payment", component:CheckoutPaymentComponent},
@@ -50,7 +50,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

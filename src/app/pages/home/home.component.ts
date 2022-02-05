@@ -138,11 +138,11 @@ export class HomeComponent implements OnInit {
 
    getSagsonContact(){
     this.sharedService.getSettingValues({ s_key : 'sagson_contact'}).subscribe((res:any)=>{
-      if(res.status == 200) {
-        this.sagsonContact = res.data[0].value;
-      } else {
-        this.toastr.error("Error");
-      }
+      // if(res.status == 200) {
+      //   this.sagsonContact = res.data[0].value;
+      // } else {
+      //   this.toastr.error("Error");
+      // }
     })
   }
 

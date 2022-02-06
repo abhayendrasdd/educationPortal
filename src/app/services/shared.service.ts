@@ -82,6 +82,20 @@ export class SharedService {
       .pipe(catchError(this.handleError('Error', [])));
   }
 
+  getCourseDetailsBySlug(slug :any){
+    return this.http.get(`${this.apiUrl}api/get-course-details?slug=${slug}`)
+    .pipe(
+      catchError(this.handleError('Error', []))
+    );
+  }
+
+  getCourseFaqs(course_id:any){
+    return this.http.get(`${this.apiUrl}api/get-faqs?course_id=${course_id}`)
+    .pipe(
+      catchError(this.handleError('Error', []))
+    );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error('Error handler', error);

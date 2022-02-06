@@ -1,338 +1,568 @@
 <section class="section search-results">
-    <div class="container">
-        <div class="title">
-            <h2>{{courseName}} Courses</h2>
-        </div>
-        <p class="subTitle">Showing 4039 total resilts for “design course”</p>
-        <div class="filterBy">
-            <h3>Filter By</h3>
-            <div class="filterWidget">
-                <div class="filterFields form-group">
-                    <select class="form-control">
-                        <option value="">Language</option>
-                        <option value="{{language?.id}}" *ngFor="let language of courseDetail?.languages" [selected]="language?.status == 'active'">{{language?.langauge}}</option>
-                    </select>
-                </div>
-                <div class="filterFields form-group">
-                    <select class="form-control">
-                        <option value="">Duration</option>
-                    </select>
-                </div>
-                <div class="filterFields form-group">
-                    <select class="form-control">
-                        <option value="">Level</option>
-                        <option value="{{level?.id}}" *ngFor="let level of courseDetail?.levels" [selected]="level?.status == 'active'">{{level?.level}}</option>
-                    </select>
-                </div>
-                <div class="filterFields form-group">
-                    <select class="form-control">
-                        <option value="">Subject</option>
-                    </select>
-                </div>
-                <div class="filterFields form-group">
-                    <select class="form-control">
-                        <option value="">Skills</option>
-                    </select>
-                </div>
-            </div>
-        </div><!--//Filter By-->
-
-        <div class="currentCourses">
-            <h4 class="heading">Courses to get you started</h4>
-            <div>
-                <tabset>
-                  <tab heading="Most Popular" id="tab1">
-                    <div class="row searchItems">
-                        <div class="col-md-4" *ngFor="let item of courseDetail?.courses">
-                            <div class="whiteFrame certifiedTeacherCol">
-                                <div class="imageRow"><img src="{{item?.course_img ? getImage(item?.course_img) : '../../../assets/images/image1.jpg'}}" alt=""></div>
-                                <h3>{{item?.course_title}}</h3>
-                                <div class="rateCountRow">
-                                    <div class="ratingCol">
-                                        <span class="rateValue">4.5</span> <img src="../../../assets/images/icon-star.svg" alt=""> <span class="totalRating">(104,716)</span>
-                                    </div>
-                                    <div class="studentCount"><span>46,995</span> Student</div>
-                                </div>
-                                <div class="d-flex flex-wrap justify-content-between valueItems">
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-clock.svg" alt=""></span>{{item?.course_duration ? item?.course_duration : '0 h'}}
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-calendar.svg" alt=""></span>{{item?.lecture_count ? item?.lecture_count :'0'}} Lectures
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-graph.svg" alt=""></span>{{item?.level_details?.level}}
-                                    </div>
-                                </div>
-                                <div class="bottomRow">
-                                    <div class="userInfoCol">
-                                        <img src="../../../assets/images/user1.jpg" alt="">
-                                        <span>{{item?.instructor_details?.firstname + ' ' + item?.instructor_details?.lastname}}</span>
-                                    </div>
-                                    <div class="priceCol">$ {{item?.price ? item?.price :'0'}}</div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                      
-                    </div>
-                  </tab>
-                  <tab heading="Treanding">
-                    <div class="row searchItems">
-                        <div class="col-md-4">
-                            <div class="whiteFrame certifiedTeacherCol">
-                                <div class="imageRow"><img src="../../../assets/images/image3.jpg" alt=""></div>
-                                <h3 routerLink="/course-details">Adobe Photoshop Training: From Beginner
-                                    to Pro</h3>
-                                <div class="rateCountRow">
-                                    <div class="ratingCol">
-                                        <span class="rateValue">4.5</span> <img src="../../../assets/images/icon-star.svg" alt=""> <span class="totalRating">(104,716)</span>
-                                    </div>
-                                    <div class="studentCount"><span>46,995</span> Student</div>
-                                </div>
-                                <div class="d-flex flex-wrap justify-content-between valueItems">
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-clock.svg" alt=""></span>11 hr 20 mins
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-calendar.svg" alt=""></span>46 Lectures
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-graph.svg" alt=""></span>Beginner
-                                    </div>
-                                </div>
-                                <div class="bottomRow">
-                                    <div class="userInfoCol">
-                                        <img src="../../../assets/images/user1.jpg" alt="">
-                                        <span>Albert Flores</span>
-                                    </div>
-                                    <div class="priceCol">$120.99</div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="col-md-4">
-                            <div class="whiteFrame certifiedTeacherCol">
-                                <div class="imageRow"><img src="../../../assets/images/image1.jpg" alt=""></div>
-                                <h3>Adobe Photoshop Training: From Beginner
-                                    to Pro</h3>
-                                <div class="rateCountRow">
-                                    <div class="ratingCol">
-                                        <span class="rateValue">4.5</span> <img src="../../../assets/images/icon-star.svg" alt=""> <span class="totalRating">(104,716)</span>
-                                    </div>
-                                    <div class="studentCount"><span>46,995</span> Student</div>
-                                </div>
-                                <div class="d-flex flex-wrap justify-content-between valueItems">
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-clock.svg" alt=""></span>11 hr 20 mins
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-calendar.svg" alt=""></span>46 Lectures
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-graph.svg" alt=""></span>Beginner
-                                    </div>
-                                </div>
-                                <div class="bottomRow">
-                                    <div class="userInfoCol">
-                                        <img src="../../../assets/images/user2.jpg" alt="">
-                                        <span>Albert Flores</span>
-                                    </div>
-                                    <div class="priceCol">$120.99</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="whiteFrame certifiedTeacherCol">
-                                <div class="imageRow"><img src="../../../assets/images/image2.jpg" alt=""></div>
-                                <h3>Adobe Photoshop Training: From Beginner
-                                    to Pro</h3>
-                                <div class="rateCountRow">
-                                    <div class="ratingCol">
-                                        <span class="rateValue">4.5</span> <img src="../../../assets/images/icon-star.svg" alt=""> <span class="totalRating">(104,716)</span>
-                                    </div>
-                                    <div class="studentCount"><span>46,995</span> Student</div>
-                                </div>
-                                <div class="d-flex flex-wrap justify-content-between valueItems">
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-clock.svg" alt=""></span>11 hr 20 mins
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-calendar.svg" alt=""></span>46 Lectures
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-graph.svg" alt=""></span>Beginner
-                                    </div>
-                                </div>
-                                <div class="bottomRow">
-                                    <div class="userInfoCol">
-                                        <img src="../../../assets/images/user1.jpg" alt="">
-                                        <span>Albert Flores</span>
-                                    </div>
-                                    <div class="priceCol">$120.99</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="whiteFrame certifiedTeacherCol">
-                                <div class="imageRow"><img src="../../../assets/images/image2.jpg" alt=""></div>
-                                <h3>Adobe Photoshop Training: From Beginner
-                                    to Pro</h3>
-                                <div class="rateCountRow">
-                                    <div class="ratingCol">
-                                        <span class="rateValue">4.5</span> <img src="../../../assets/images/icon-star.svg" alt=""> <span class="totalRating">(104,716)</span>
-                                    </div>
-                                    <div class="studentCount"><span>46,995</span> Student</div>
-                                </div>
-                                <div class="d-flex flex-wrap justify-content-between valueItems">
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-clock.svg" alt=""></span>11 hr 20 mins
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-calendar.svg" alt=""></span>46 Lectures
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-graph.svg" alt=""></span>Beginner
-                                    </div>
-                                </div>
-                                <div class="bottomRow">
-                                    <div class="userInfoCol">
-                                        <img src="../../../assets/images/user1.jpg" alt="">
-                                        <span>Albert Flores</span>
-                                    </div>
-                                    <div class="priceCol">$120.99</div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="col-md-4">
-                            <div class="whiteFrame certifiedTeacherCol">
-                                <div class="imageRow"><img src="../../../assets/images/image1.jpg" alt=""></div>
-                                <h3>Adobe Photoshop Training: From Beginner
-                                    to Pro</h3>
-                                <div class="rateCountRow">
-                                    <div class="ratingCol">
-                                        <span class="rateValue">4.5</span> <img src="../../../assets/images/icon-star.svg" alt=""> <span class="totalRating">(104,716)</span>
-                                    </div>
-                                    <div class="studentCount"><span>46,995</span> Student</div>
-                                </div>
-                                <div class="d-flex flex-wrap justify-content-between valueItems">
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-clock.svg" alt=""></span>11 hr 20 mins
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-calendar.svg" alt=""></span>46 Lectures
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-graph.svg" alt=""></span>Beginner
-                                    </div>
-                                </div>
-                                <div class="bottomRow">
-                                    <div class="userInfoCol">
-                                        <img src="../../../assets/images/user2.jpg" alt="">
-                                        <span>Albert Flores</span>
-                                    </div>
-                                    <div class="priceCol">$120.99</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="whiteFrame certifiedTeacherCol">
-                                <div class="imageRow"><img src="../../../assets/images/image3.jpg" alt=""></div>
-                                <h3>Adobe Photoshop Training: From Beginner
-                                    to Pro</h3>
-                                <div class="rateCountRow">
-                                    <div class="ratingCol">
-                                        <span class="rateValue">4.5</span> <img src="../../../assets/images/icon-star.svg" alt=""> <span class="totalRating">(104,716)</span>
-                                    </div>
-                                    <div class="studentCount"><span>46,995</span> Student</div>
-                                </div>
-                                <div class="d-flex flex-wrap justify-content-between valueItems">
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-clock.svg" alt=""></span>11 hr 20 mins
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-calendar.svg" alt=""></span>46 Lectures
-                                    </div>
-                                    <div class="valueItem">
-                                        <span class="iconSpan"><img src="../../../assets/images/icon-graph.svg" alt=""></span>Beginner
-                                    </div>
-                                </div>
-                                <div class="bottomRow">
-                                    <div class="userInfoCol">
-                                        <img src="../../../assets/images/user1.jpg" alt="">
-                                        <span>Albert Flores</span>
-                                    </div>
-                                    <div class="priceCol">$120.99</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  </tab>
-                </tabset>
-              </div>
-        </div>
-
-        <div class="popularTopics section pt-0">
-            <h4 class="heading">Popular topics</h4>
-            <ul class="popularTopicsList mb-0">
-                <li><a href="javascript:void(0)">Blender</a></li>
-                <li><a href="javascript:void(0)">Photoshop</a></li>
-                <li><a href="javascript:void(0)">User Experience Design</a></li>
-                <li><a href="javascript:void(0)">Drawing</a></li>
-                <li><a href="javascript:void(0)">Web Design</a></li>
-                <li><a href="javascript:void(0)">Graphic Design</a></li>
-                <li><a href="javascript:void(0)">Adobe Illustrator</a></li>
-                <li><a href="javascript:void(0)">3D Modelling</a></li>
-                <li><a href="javascript:void(0)">After Effects</a></li>
-                <li><a href="javascript:void(0)">Character Design</a></li>
-            </ul>
-        </div>
-
-        <div class="popularInstructor section p-0">
-            <h4 class="heading">Popular Instructor</h4>
-            <div class="row row10">
-                <div class="col-md-3">
-                    <div class="popularInstructorList">
-                        <div class="instructorPic"><img src="../../../assets/images/user1.jpg" alt=""></div>
-                        <div class="instructorContent flex-grow-1">
-                            <h5><a href="javascript:void(0)">John Doe</a></h5>
-                            <p>User Experience Design, User Interface</p>
-                            <p><strong>29</strong> Courses</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="popularInstructorList">
-                        <div class="instructorPic"><img src="../../../assets/images/user1.jpg" alt=""></div>
-                        <div class="instructorContent flex-grow-1">
-                            <h5><a href="javascript:void(0)">John Doe</a></h5>
-                            <p>User Experience Design, User Interface</p>
-                            <p><strong>29</strong> Courses</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="popularInstructorList">
-                        <div class="instructorPic"><img src="../../../assets/images/user1.jpg" alt=""></div>
-                        <div class="instructorContent flex-grow-1">
-                            <h5><a href="javascript:void(0)">John Doe</a></h5>
-                            <p>User Experience Design, User Interface</p>
-                            <p><strong>29</strong> Courses</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="popularInstructorList">
-                        <div class="instructorPic"><img src="../../../assets/images/user1.jpg" alt=""></div>
-                        <div class="instructorContent flex-grow-1">
-                            <h5><a href="javascript:void(0)">John Doe</a></h5>
-                            <p>User Experience Design, User Interface</p>
-                            <p><strong>29</strong> Courses</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="title">
+      <h2>{{ courseName }} Courses</h2>
     </div>
+    <p class="subTitle">
+      Showing {{ courseCount }} total results for {{ courseName }}
+    </p>
+    <div class="filterBy">
+      <h3>Filter By</h3>
+      <div class="filterWidget">
+        <div class="filterFields form-group">
+          <select class="form-control">
+            <option value="">Language</option>
+            <option
+              value="{{ language?.id }}"
+              *ngFor="let language of courseDetail?.languages"
+              [selected]="language?.status == 'active'"
+            >
+              {{ language?.langauge }}
+            </option>
+          </select>
+        </div>
+        <div class="filterFields form-group">
+          <select class="form-control">
+            <option value="">Duration</option>
+          </select>
+        </div>
+        <div class="filterFields form-group">
+          <select class="form-control">
+            <option value="">Level</option>
+            <option
+              value="{{ level?.id }}"
+              *ngFor="let level of courseDetail?.levels"
+              [selected]="level?.status == 'active'"
+            >
+              {{ level?.level }}
+            </option>
+          </select>
+        </div>
+        <div class="filterFields form-group">
+          <select class="form-control">
+            <option value="">Subject</option>
+          </select>
+        </div>
+        <div class="filterFields form-group">
+          <select class="form-control">
+            <option value="">Skills</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!--//Filter By-->
+
+    <!-- Courses  -->
+    <div class="currentCourses">
+      <h4 class="heading">Courses to get you started</h4>
+      <div>
+        <tabset>
+          <tab heading="Most Popular" id="tab1">
+            <div class="row searchItems">
+              <div class="col-md-4" *ngFor="let item of courseDetail?.courses">
+                <div class="whiteFrame certifiedTeacherCol">
+                  <div class="imageRow">
+                    <img
+                      src="{{
+                        item?.course_img
+                          ? getImage(item?.course_img)
+                          : '../../../assets/images/image1.jpg'
+                      }}"
+                      alt=""
+                    />
+                  </div>
+                  <h3 (click)="redirectToDetialsPage(item.slug)">
+                    {{ item?.course_title }}
+                  </h3>
+                  <div class="rateCountRow">
+                    <div class="ratingCol">
+                      <span class="rateValue">4.5</span>
+                      <img src="../../../assets/images/icon-star.svg" alt="" />
+                      <span class="totalRating">(104,716)</span>
+                    </div>
+                    <div class="studentCount"><span>46,995</span> Student</div>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap justify-content-between valueItems"
+                  >
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-clock.svg"
+                          alt="" /></span
+                      >{{
+                        item?.course_duration ? item?.course_duration : '0 h'
+                      }}
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-calendar.svg"
+                          alt="" /></span
+                      >{{ item?.lecture_count ? item?.lecture_count : '0' }}
+                      Lectures
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-graph.svg"
+                          alt="" /></span
+                      >{{ item?.level_details?.level }}
+                    </div>
+                  </div>
+                  <div class="bottomRow">
+                    <div class="userInfoCol">
+                      <img [src]="item?.instructor_details?.image" alt="" />
+                      <span>{{
+                        item?.instructor_details?.firstname +
+                          ' ' +
+                          item?.instructor_details?.lastname
+                      }}</span>
+                    </div>
+                    <div class="priceCol">
+                      $ {{ item?.price ? item?.price : '0' }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tab>
+
+          <!-- START TRENDING  -->
+          <tab heading="Trending" id="tab1">
+            <div class="row searchItems">
+              <div class="col-md-4" *ngFor="let item of courseDetail?.courses">
+                <div class="whiteFrame certifiedTeacherCol">
+                  <div class="imageRow">
+                    <img
+                      src="{{
+                        item?.course_img
+                          ? getImage(item?.course_img)
+                          : '../../../assets/images/image1.jpg'
+                      }}"
+                      alt=""
+                    />
+                  </div>
+                  <h3>{{ item?.course_title }}</h3>
+                  <div class="rateCountRow">
+                    <div class="ratingCol">
+                      <span class="rateValue">4.5</span>
+                      <img src="../../../assets/images/icon-star.svg" alt="" />
+                      <span class="totalRating">(104,716)</span>
+                    </div>
+                    <div class="studentCount"><span>46,995</span> Student</div>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap justify-content-between valueItems"
+                  >
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-clock.svg"
+                          alt="" /></span
+                      >{{
+                        item?.course_duration ? item?.course_duration : '0 h'
+                      }}
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-calendar.svg"
+                          alt="" /></span
+                      >{{ item?.lecture_count ? item?.lecture_count : '0' }}
+                      Lectures
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-graph.svg"
+                          alt="" /></span
+                      >{{ item?.level_details?.level }}
+                    </div>
+                  </div>
+                  <div class="bottomRow">
+                    <div class="userInfoCol">
+                      <img src="../../../assets/images/user1.jpg" alt="" />
+                      <span>{{
+                        item?.instructor_details?.firstname +
+                          ' ' +
+                          item?.instructor_details?.lastname
+                      }}</span>
+                    </div>
+                    <div class="priceCol">
+                      $ {{ item?.price ? item?.price : '0' }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tab>
+          <!-- <tab heading="Trending">
+            <div class="row searchItems">
+              <div class="col-md-4">
+                <div class="whiteFrame certifiedTeacherCol">
+                  <div class="imageRow">
+                    <img src="../../../assets/images/image3.jpg" alt="" />
+                  </div>
+                  <h3 routerLink="/course-details">
+                    Adobe Photoshop Training: From Beginner to Pro
+                  </h3>
+                  <div class="rateCountRow">
+                    <div class="ratingCol">
+                      <span class="rateValue">4.5</span>
+                      <img src="../../../assets/images/icon-star.svg" alt="" />
+                      <span class="totalRating">(104,716)</span>
+                    </div>
+                    <div class="studentCount"><span>46,995</span> Student</div>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap justify-content-between valueItems"
+                  >
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-clock.svg"
+                          alt="" /></span
+                      >11 hr 20 mins
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-calendar.svg"
+                          alt="" /></span
+                      >46 Lectures
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-graph.svg"
+                          alt="" /></span
+                      >Beginner
+                    </div>
+                  </div>
+                  <div class="bottomRow">
+                    <div class="userInfoCol">
+                      <img src="../../../assets/images/user1.jpg" alt="" />
+                      <span>Albert Flores</span>
+                    </div>
+                    <div class="priceCol">$120.99</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="whiteFrame certifiedTeacherCol">
+                  <div class="imageRow">
+                    <img src="../../../assets/images/image1.jpg" alt="" />
+                  </div>
+                  <h3>Adobe Photoshop Training: From Beginner to Pro</h3>
+                  <div class="rateCountRow">
+                    <div class="ratingCol">
+                      <span class="rateValue">4.5</span>
+                      <img src="../../../assets/images/icon-star.svg" alt="" />
+                      <span class="totalRating">(104,716)</span>
+                    </div>
+                    <div class="studentCount"><span>46,995</span> Student</div>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap justify-content-between valueItems"
+                  >
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-clock.svg"
+                          alt="" /></span
+                      >11 hr 20 mins
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-calendar.svg"
+                          alt="" /></span
+                      >46 Lectures
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-graph.svg"
+                          alt="" /></span
+                      >Beginner
+                    </div>
+                  </div>
+                  <div class="bottomRow">
+                    <div class="userInfoCol">
+                      <img src="../../../assets/images/user2.jpg" alt="" />
+                      <span>Albert Flores</span>
+                    </div>
+                    <div class="priceCol">$120.99</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="whiteFrame certifiedTeacherCol">
+                  <div class="imageRow">
+                    <img src="../../../assets/images/image2.jpg" alt="" />
+                  </div>
+                  <h3>Adobe Photoshop Training: From Beginner to Pro</h3>
+                  <div class="rateCountRow">
+                    <div class="ratingCol">
+                      <span class="rateValue">4.5</span>
+                      <img src="../../../assets/images/icon-star.svg" alt="" />
+                      <span class="totalRating">(104,716)</span>
+                    </div>
+                    <div class="studentCount"><span>46,995</span> Student</div>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap justify-content-between valueItems"
+                  >
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-clock.svg"
+                          alt="" /></span
+                      >11 hr 20 mins
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-calendar.svg"
+                          alt="" /></span
+                      >46 Lectures
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-graph.svg"
+                          alt="" /></span
+                      >Beginner
+                    </div>
+                  </div>
+                  <div class="bottomRow">
+                    <div class="userInfoCol">
+                      <img src="../../../assets/images/user1.jpg" alt="" />
+                      <span>Albert Flores</span>
+                    </div>
+                    <div class="priceCol">$120.99</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="whiteFrame certifiedTeacherCol">
+                  <div class="imageRow">
+                    <img src="../../../assets/images/image2.jpg" alt="" />
+                  </div>
+                  <h3>Adobe Photoshop Training: From Beginner to Pro</h3>
+                  <div class="rateCountRow">
+                    <div class="ratingCol">
+                      <span class="rateValue">4.5</span>
+                      <img src="../../../assets/images/icon-star.svg" alt="" />
+                      <span class="totalRating">(104,716)</span>
+                    </div>
+                    <div class="studentCount"><span>46,995</span> Student</div>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap justify-content-between valueItems"
+                  >
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-clock.svg"
+                          alt="" /></span
+                      >11 hr 20 mins
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-calendar.svg"
+                          alt="" /></span
+                      >46 Lectures
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-graph.svg"
+                          alt="" /></span
+                      >Beginner
+                    </div>
+                  </div>
+                  <div class="bottomRow">
+                    <div class="userInfoCol">
+                      <img src="../../../assets/images/user1.jpg" alt="" />
+                      <span>Albert Flores</span>
+                    </div>
+                    <div class="priceCol">$120.99</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="whiteFrame certifiedTeacherCol">
+                  <div class="imageRow">
+                    <img src="../../../assets/images/image1.jpg" alt="" />
+                  </div>
+                  <h3>Adobe Photoshop Training: From Beginner to Pro</h3>
+                  <div class="rateCountRow">
+                    <div class="ratingCol">
+                      <span class="rateValue">4.5</span>
+                      <img src="../../../assets/images/icon-star.svg" alt="" />
+                      <span class="totalRating">(104,716)</span>
+                    </div>
+                    <div class="studentCount"><span>46,995</span> Student</div>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap justify-content-between valueItems"
+                  >
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-clock.svg"
+                          alt="" /></span
+                      >11 hr 20 mins
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-calendar.svg"
+                          alt="" /></span
+                      >46 Lectures
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-graph.svg"
+                          alt="" /></span
+                      >Beginner
+                    </div>
+                  </div>
+                  <div class="bottomRow">
+                    <div class="userInfoCol">
+                      <img src="../../../assets/images/user2.jpg" alt="" />
+                      <span>Albert Flores</span>
+                    </div>
+                    <div class="priceCol">$120.99</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="whiteFrame certifiedTeacherCol">
+                  <div class="imageRow">
+                    <img src="../../../assets/images/image3.jpg" alt="" />
+                  </div>
+                  <h3>Adobe Photoshop Training: From Beginner to Pro</h3>
+                  <div class="rateCountRow">
+                    <div class="ratingCol">
+                      <span class="rateValue">4.5</span>
+                      <img src="../../../assets/images/icon-star.svg" alt="" />
+                      <span class="totalRating">(104,716)</span>
+                    </div>
+                    <div class="studentCount"><span>46,995</span> Student</div>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap justify-content-between valueItems"
+                  >
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-clock.svg"
+                          alt="" /></span
+                      >11 hr 20 mins
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-calendar.svg"
+                          alt="" /></span
+                      >46 Lectures
+                    </div>
+                    <div class="valueItem">
+                      <span class="iconSpan"
+                        ><img
+                          src="../../../assets/images/icon-graph.svg"
+                          alt="" /></span
+                      >Beginner
+                    </div>
+                  </div>
+                  <div class="bottomRow">
+                    <div class="userInfoCol">
+                      <img src="../../../assets/images/user1.jpg" alt="" />
+                      <span>Albert Flores</span>
+                    </div>
+                    <div class="priceCol">$120.99</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tab> -->
+        </tabset>
+      </div>
+    </div>
+
+    <div class="popularTopics section pt-0">
+      <h4 class="heading">Popular topics</h4>
+      <ul class="popularTopicsList mb-0">
+        <li><a href="javascript:void(0)">Blender</a></li>
+        <li><a href="javascript:void(0)">Photoshop</a></li>
+        <li><a href="javascript:void(0)">User Experience Design</a></li>
+        <li><a href="javascript:void(0)">Drawing</a></li>
+        <li><a href="javascript:void(0)">Web Design</a></li>
+        <li><a href="javascript:void(0)">Graphic Design</a></li>
+        <li><a href="javascript:void(0)">Adobe Illustrator</a></li>
+        <li><a href="javascript:void(0)">3D Modelling</a></li>
+        <li><a href="javascript:void(0)">After Effects</a></li>
+        <li><a href="javascript:void(0)">Character Design</a></li>
+      </ul>
+    </div>
+
+    <div class="popularInstructor section p-0">
+      <h4 class="heading">Popular Instructor</h4>
+      <div class="row row10">
+        <div class="col-md-3">
+          <div class="popularInstructorList">
+            <div class="instructorPic">
+              <img src="../../../assets/images/user1.jpg" alt="" />
+            </div>
+            <div class="instructorContent flex-grow-1">
+              <h5><a href="javascript:void(0)">John Doe</a></h5>
+              <p>User Experience Design, User Interface</p>
+              <p><strong>29</strong> Courses</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="popularInstructorList">
+            <div class="instructorPic">
+              <img src="../../../assets/images/user1.jpg" alt="" />
+            </div>
+            <div class="instructorContent flex-grow-1">
+              <h5><a href="javascript:void(0)">John Doe</a></h5>
+              <p>User Experience Design, User Interface</p>
+              <p><strong>29</strong> Courses</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="popularInstructorList">
+            <div class="instructorPic">
+              <img src="../../../assets/images/user1.jpg" alt="" />
+            </div>
+            <div class="instructorContent flex-grow-1">
+              <h5><a href="javascript:void(0)">John Doe</a></h5>
+              <p>User Experience Design, User Interface</p>
+              <p><strong>29</strong> Courses</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="popularInstructorList">
+            <div class="instructorPic">
+              <img src="../../../assets/images/user1.jpg" alt="" />
+            </div>
+            <div class="instructorContent flex-grow-1">
+              <h5><a href="javascript:void(0)">John Doe</a></h5>
+              <p>User Experience Design, User Interface</p>
+              <p><strong>29</strong> Courses</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

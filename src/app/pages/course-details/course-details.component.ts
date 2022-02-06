@@ -19,12 +19,15 @@ export class CourseDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private courseService: SharedService,
     private toastr: ToastrService
   ) {
     this.courseSlug = this.route.snapshot.queryParamMap.get('slug');
     if (this.courseSlug) {
       this.getCourseDetails()
+    } else {
+      this.router.navigateByUrl('/');
     }
   }
 
@@ -43,6 +46,7 @@ export class CourseDetailsComponent implements OnInit {
         }
       } else {
         this.toastr.error("No course Details Found")
+        this.router.navigateByUrl('/');
       }
     })
 

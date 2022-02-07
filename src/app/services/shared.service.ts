@@ -96,6 +96,12 @@ export class SharedService {
     );
   }
 
+  getServices(): Observable<any> {
+    return this.http
+      .get(`${this.apiUrl}api/get_services`)
+      .pipe(catchError(this.handleError('Error', [])));
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error('Error handler', error);

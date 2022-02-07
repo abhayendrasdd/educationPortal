@@ -5,72 +5,18 @@
         </div>
         <p class="subTitle">Showing all the services which we provide.</p>
         <div class="row row10">
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4" *ngFor="let item of serviceDetail">
                 <div class="servicesCol whiteFrame sepNewsCol p-0">
-                    <div class="img"><img src="../../../assets/images/services/service1.jpg" alt=""></div>
-                    <h3><a href="javascript:void(0)">Professional &amp; Development</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <div class="servicesCol whiteFrame sepNewsCol p-0">
-                    <div class="img"><img src="../../../assets/images/services/service2.jpg" alt=""></div>
-                    <h3><a href="javascript:void(0)" routerLink="/resources">Free Resources</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <div class="servicesCol whiteFrame sepNewsCol p-0">
-                    <div class="img"><img src="../../../assets/images/services/service3.jpg" alt=""></div>
-                    <h3><a href="javascript:void(0)" routerLink="/careers">Find a Job</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <div class="servicesCol whiteFrame sepNewsCol p-0">
-                    <div class="img"><img src="../../../assets/images/services/service4.jpg" alt=""></div>
-                    <h3><a href="javascript:void(0)">Financial Advice</a></h3>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4">
-                <div class="servicesCol whiteFrame sepNewsCol p-0">
-                    <div class="img"><img src="../../../assets/images/services/service5.jpg" alt=""></div>
-                    <h3><a href="javascript:void(0)">Academic Advice</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <div class="servicesCol whiteFrame sepNewsCol p-0">
-                    <div class="img"><img src="../../../assets/images/services/service6.jpg" alt=""></div>
-                    <h3><a href="javascript:void(0)">Attestation Services</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <div class="servicesCol whiteFrame sepNewsCol p-0">
-                    <div class="img"><img src="../../../assets/images/services/service7.jpg" alt=""></div>
-                    <h3><a href="javascript:void(0)">University Placement</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <div class="servicesCol whiteFrame sepNewsCol p-0">
-                    <div class="img"><img src="../../../assets/images/services/service8.jpg" alt=""></div>
-                    <h3><a href="javascript:void(0)">Live Tutoring</a></h3>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4">
-                <div class="servicesCol whiteFrame sepNewsCol p-0">
-                    <div class="img"><img src="../../../assets/images/services/service9.jpg" alt=""></div>
-                    <h3><a href="javascript:void(0)">English Language Course</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <div class="servicesCol whiteFrame sepNewsCol p-0">
-                    <div class="img"><img src="../../../assets/images/services/service10.jpg" alt=""></div>
-                    <h3><a href="javascript:void(0)">IELTS Preparation</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <div class="servicesCol whiteFrame sepNewsCol p-0">
-                    <div class="img"><img src="../../../assets/images/services/service11.jpg" alt=""></div>
-                    <h3><a href="javascript:void(0)">German Employment Programme</a></h3>
+                    <div class="img">
+                        <img 
+                            src="{{
+                                item?.image
+                                ? getImage(item?.image)
+                                : '../../../assets/images/image1.jpg'
+                            }}"
+                            alt="{{ item?.title }}"
+                        ></div>
+                    <h3><a href="javascript:void(0)" title="{{ item?.title }}">{{ item?.title }}</a></h3>
                 </div>
             </div>
             

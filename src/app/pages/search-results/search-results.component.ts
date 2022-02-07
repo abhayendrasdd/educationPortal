@@ -66,10 +66,8 @@ export class SearchResultsComponent implements OnInit {
     return image;
   }
 
-  redirectToDetialsPage(slug: any) {
+  redirectToDetailsPage(slug: any) {
     console.log('inside the redirect function ==> ', slug);
-    this.router.navigate(['/get-course-details'], {
-      queryParams: { slug: slug },
-    });
+    this.router.navigateByUrl(`/course-details/${slug}`)
   }
 }

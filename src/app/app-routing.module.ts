@@ -33,6 +33,7 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
   },
   { path: 'course-details', component: CourseDetailsComponent },
+  { path: 'course-details/:slug', component: CourseDetailsComponent },
   { path: 'cart', component: CheckoutCartComponent },
   { path: 'payment', component: CheckoutPaymentComponent },
   { path: 'frequently-asked-questions', component: FaqComponent },

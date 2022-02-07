@@ -23,7 +23,9 @@ export class CourseDetailsComponent implements OnInit {
     private courseService: SharedService,
     private toastr: ToastrService
   ) {
-    this.courseSlug = this.route.snapshot.queryParamMap.get('slug');
+
+
+    this.courseSlug = this.route.snapshot.params['slug'];
     if (this.courseSlug) {
       this.getCourseDetails()
     } else {
